@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("./yamamoto.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.home {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+.container {
+  min-height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  background-attachment: fixed;
+  padding-top: 6px;
+  text-decoration: underline black;
+}
+
+p {
+  margin-top: 230px;
+  background-color: black;
+  color: white;
+  font-size: 30px;
+  border-radius: 10px;
+  padding: 5px;
+  text-decoration: underline white;
+}
+
+.btn {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  float: right;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  z-index: 30;
+  /* background-color: blue; */
+
+  /* background-color: black; */
+}
+
+.btn_fermer {
+  font-size: 40px;
+  position: absolute;
+  right: 100px;
+  top: 5px;
+  right: 2px;
+  color: #34495e;
+}
+
+.btn_ouvert {
+  height: 7px;
+  background-color: #34495e;
+  width: 100%;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  cursor: pointer;
+}
+
+.btn_ouvert::before {
+  content: "";
+  height: 7px;
+  background-color: #34495e;
+  width: 100%;
+  position: absolute;
+  top: -10px;
+  left: 0;
+}
+
+.btn_ouvert::after {
+  content: "";
+  height: 7px;
+  background-color: #34495e;
+  width: 100%;
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+.menu {
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  background-color: black;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title_menu {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  color: white;
+  font-size: 50px;
+  text-decoration: underline white;
+  animation: animate 1s linear;
+}
+
+.projet {
+  text-decoration: none;
+  border: 2px black solid;
+  color: black;
+  border-radius: 10px;
+  font-size: 25px;
+  background-color: white;
+  width: 300px;
+  padding: 8px;
+  margin-top: 30px;
+  position: relative;
+  z-index: 40;
+  left: 37.5%;
+}
+
+.projet:hover {
+  background-color: black;
+  color: white;
+  /* opacity: 1; */
+}
+
+.menu_open {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 0;
+  transition-duration: 1s;
+  opacity: 1;
+}
+.projet {
+  animation: animate 1s linear;
+}
+
+/* @keyframes animate {
+  0% {
+    transform: translateY(-500px);
+    opacity: 0.2;
+  }
+
+  25% {
+    transform: translateY(-300px);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-150px);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateY(-70px);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+} */
+
+/* .btn_ouvert {
+  opacity: 1;
+}
+
+.btn_fermer {
+  opacity: 0;
+}
+
+.menu_open .btn_ouvert {
+  opacity: 0;
+}
+.menu_open .btn_fermer {
+  opacity: 1;
+} */

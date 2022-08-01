@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(180, 36%, 95%);
+}
+
+nav {
+  display: block;
+  flex-direction: column;
+  width: 400px;
+  flex-wrap: wrap;
+  height: 100vh;
+  background-color: white;
+  align-items: center;
+  transform: translateX(-400px);
+}
+
+h1 {
+  padding-left: 30px;
+  padding-top: 15px;
+  font-size: 30px;
+  font-weight: bold;
+  color: hsl(240, 42%, 48%);
+}
+
+.menu {
+  padding-top: 40px;
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  padding-bottom: 30px;
+  padding-left: 30px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+
+li:hover {
+  background-color: hsl(180, 26%, 60%);
+  transform: translateX(2px);
+}
+
+.button {
+  background-color: black;
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+}
+
+button {
+  font-size: 18px;
+  margin: 5px;
+}
+
+.show-links {
+  transform: translateX(0px);
+}
+
+.fermer {
+  color: rgba(255, 0, 0, 0.564);
+  position: absolute;
+  font-size: 35px;
+  font-weight: bold;
+  top: 15px;
+  left: 360px;
+  cursor: pointer;
+  /* background-color: black; */
+  z-index: 3;
+  transition: 0.3s linear;
+}
+
+.fermer:hover {
+  transform: rotate(180deg);
+}
+
+.ouvrir {
+  color: rgb(0, 98, 255);
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  top: 2.5rem;
+  right: 2.5rem;
+  font-size: 3rem;
+  background: transparent;
+  border-color: transparent;
+  -webkit-animation: bounce 0.8s infinite alternate;
+  -moz-animation: bounce 0.8s infinite alternate;
+  animation: bounce 0.8s infinite alternate;
+}
+
+@-webkit-keyframes bounce {
+  to {
+    -webkit-transform: scale(1.2);
+  }
+}
+@-moz-keyframes bounce {
+  to {
+    -moz-transform: scale(1.2);
+  }
+}
+@keyframes bounce {
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.ouvrir:hover {
+  color: rgb(0, 217, 255);
+}
+
+.home {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 570px) {
+  .nav {
+    width: 100%;
+  }
+
+  .ouvrir {
+    opacity: 0;
+  }
+  .fermer {
+    color: rgba(255, 0, 0, 0.564);
+    position: absolute;
+    font-size: 35px;
+    font-weight: bold;
+    top: 15px;
+    left: 460px;
+    cursor: pointer;
+    /* background-color: black; */
+    z-index: 3;
+    transition: 0.3s linear;
+  }
+}

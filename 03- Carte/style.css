@@ -1,0 +1,63 @@
+body {
+  background-color: grey;
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  position: absolute;
+  color: black;
+  top: -10px;
+  text-decoration: underline black;
+  font-weight: 1200;
+  font-size: 50px;
+  z-index: 10;
+}
+
+.card {
+  position: absolute;
+  width: 500px;
+  margin: 0;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.card.active {
+  opacity: 1;
+}
+
+.card-img-top {
+  width: 500px;
+  max-height: 180px;
+}
+
+.card-body {
+  padding: 8px;
+}
+
+#btn {
+  position: absolute;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.home {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}

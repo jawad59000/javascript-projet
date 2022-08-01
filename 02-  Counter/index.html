@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <form>
+      <input
+        class="home"
+        type="button"
+        value="Retour!"
+        onclick="history.back()"
+      />
+    </form>
+    <div class="container">
+      <div class="centrer">
+        <h1 class="title">Counter</h1>
+        <span id="number" class="number">0</span>
+      </div>
+      <div class="btn-div">
+        <button id="decrease" class="btn">DECREASE</button>
+        <button id="reset" class="btn">RESET</button>
+        <button id="increase" class="btn">INCREASE</button>
+      </div>
+    </div>
+  </body>
+</html>
