@@ -6,6 +6,7 @@ console.log(fermer);
 
 menu.style.display = "none";
 
+fermer.style.display = "none";
 btn.addEventListener("click", function () {
   menu.classList.toggle("menu_open");
   if (menu.classList.contains("menu_open")) {
