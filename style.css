@@ -143,7 +143,8 @@ p {
   left: 37.5%;
 }
 .projets {
-  padding-top: 70px;
+  padding-top: 60px;
+  padding-bottom: 20px;
 }
 
 .projet:hover {

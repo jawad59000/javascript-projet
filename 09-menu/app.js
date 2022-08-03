@@ -121,7 +121,7 @@ function display(menu) {
         </article>`;
   });
 
-  section.innerHTML = displayMenu.join("");
+  document.body.innerHTML = displayMenu.join("");
 }
 
 window.addEventListener("DOMContentLoaded", function () {
