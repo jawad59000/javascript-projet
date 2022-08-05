@@ -3,7 +3,7 @@ let vid = document.querySelector(".preloader");
 let btn = document.querySelector(".switch-btn");
 let video = document.querySelector(".video-container");
 
-// afficher la video au raffraichissemnt de la page
+// afficher la video quand la page est totalement charger
 window.addEventListener("load", () => {
   vid.classList.add("video-container");
 });
