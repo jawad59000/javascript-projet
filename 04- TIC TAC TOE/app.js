@@ -5,6 +5,8 @@ let score1 = document.getElementById("score1");
 let score2 = document.getElementById("score2");
 let scoreNul = document.getElementById("scoreNul");
 
+window.addEventListener("DOMContentLoaded", setupItems);
+
 // mémoire des stats du jeu
 let state = {
   joueurEnCours: 1,
@@ -90,6 +92,13 @@ const jouerCase = (e) => {
 
     resetState();
     cases.forEach((c) => (c.textContent = ""));
+    let items = getLocalStorage();
+    if ((items.length = 0)) {
+      addToLocalStorage(state.scoreJ1, state.scoreJ2);
+    } else {
+      items.scoreJ1 = state.scoreJ1;
+      items.scoreJ2 = state.scoreJ2;
+    }
   } else if (isVctoire === null) {
     // si nul
 
@@ -97,9 +106,9 @@ const jouerCase = (e) => {
 
     state.matchNul++;
     scoreNul.textContent = state.matchNul;
-    joueur.textContent = "1";
 
     resetState();
+    addToLocalStorage(state.matchNul);
     cases.forEach((c) => (c.textContent = ""));
   } else if (isVctoire === false) {
     // sinon on continue le jeu
@@ -118,3 +127,68 @@ const jouerCase = (e) => {
 cases.forEach((el) => {
   el.addEventListener("click", jouerCase);
 });
+
+function addToLocalStorage(scoreJ1, scoreJ2) {
+  // on crée un object ou l'on vien stocker la valeur et l'id de l'article
+  const score = [{ scoreJ1 }, { scoreJ2 }];
+  // on crée une variable ou l'on va stocker des truc dans le local storage
+  let items = getLocalStorage();
+  // on push dans cette variable l'object ou les object d'article ajouter
+  items.push(score);
+  // editLocalStorage();
+  // on crée une clef list ou seront stocker tout les article stocker dans items
+  localStorage.setItem("scores", JSON.stringify(items));
+
+  // if (items.length > 0) {
+  //   editLocalStorage();
+  //   cases.forEach((el) => {
+  //     el.addEventListener("click", jouerCase);
+  //   });
+  // }
+}
+
+function editLocalStorage(value) {
+  items = items.reduce(function (item) {
+    if (items.scoreJ1 || items.scoreJ2 || items.atchNul) {
+      item.scoreJ1.value = value;
+      item.scoreJ2.value = value;
+    }
+  });
+}
+function getLocalStorage() {
+  // on va retourner ce qui est stocker dans la clef list dans le storage
+  return localStorage.getItem("scores")
+    ? // si il ya des items dans la list on les return
+      JSON.parse(localStorage.getItem("scores"))
+    : // si la list est vide on retourne un tableau vide
+      [];
+}
+
+function removeFromLocalStorage(scoreJ1, scoreJ2) {
+  let items = getLocalStorage();
+  // on filtre le tableaux item et on retourn uniquement les item dont l'id ne correspond pas a celui que l'on vien de supprimer sur la page
+  if (deletScore) {
+    return (scoreJ1 = 0), (scoreJ2 = 0), (matchNul = 0);
+  }
+
+  localStorage.setItem("scores", JSON.stringify(items));
+}
+
+function createListItem(score1, score2) {
+  score1.textContent = state.scoreJ1;
+  score2.textContent = state.scoreJ2;
+}
+
+function setupItems() {
+  let items = getLocalStorage();
+
+  if (items.length > 0) {
+    // crée la list d'element puis l'afficher grace  a la classe show container
+    items.forEach(function (score1, score2) {
+      createListItem(score1, score2);
+    });
+  } else {
+    return (scoreJ1 = 0), (scoreJ2 = 0), (matchNul = 0);
+  }
+  console.log(items.length);
+}

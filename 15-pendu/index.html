@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pendu</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <form>
+      <input
+        class="home"
+        type="button"
+        value="Retour!"
+        onclick="history.back()"
+      />
+    </form>
+    <div id="turn"></div>
+    <div id="letterAlreadyUsed"></div>
+    <div id="emptyLetters">
+      <a
+        href="https://www.google.com/search?q=transformer+un+mot+en+lien+js&oq=transformer+un+mot+en+lien+js&aqs=chrome..69i57j33i160l4.16757j0j4&sourceid=chrome&ie=UTF-8"
+      >
+      </a>
+    </div>
+    <div class="img active"></div>
+    <div class="img">
+      <img src="./IMG/1.png" />
+    </div>
+    <div class="img">
+      <img src="./IMG/2.png" />
+    </div>
+    <div class="img">
+      <img src="./IMG/3.png" />
+    </div>
+    <div class="img">
+      <img src="./IMG/4.png" />
+    </div>
+    <div class="img">
+      <img src="./IMG/5.png" />
+    </div>
+    <div class="img">
+      <img src="./IMG/6.png" />
+    </div>
+    <div class="img">
+      <img src="./IMG/7.png" />
+    </div>
+    <div class="img">
+      <img src="./IMG/8.png" />
+    </div>
+
+    <div class="choiceLetter">
+      <input id="selectedLetter" value="A" type="text" />
+      <input type="button" value="Add letter" onclick="selectedLetter()" />
+    </div>
+  </body>
+</html>

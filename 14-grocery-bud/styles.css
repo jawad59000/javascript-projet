@@ -326,3 +326,13 @@ Grocery List
 .clear-btn:hover {
   color: var(--clr-red-dark);
 }
+
+.home {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  z-index: 10;
+}

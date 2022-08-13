@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  display: grid;
+  height: 100vh;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: hsl(211, 27%, 70%);
+}
+#turn {
+  font-size: 30px;
+  position: absolute;
+  top: 20px;
+}
+
+#letterAlreadyUsed {
+  top: 50px;
+  font-size: 30px;
+  position: absolute;
+  top: 60px;
+}
+
+.choiceLetter {
+  bottom: 50px;
+  position: absolute;
+  bottom: 30px;
+}
+
+#emptyLetters {
+  position: absolute;
+  font-size: 60px;
+  bottom: 70px;
+}
+#img {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img {
+  font-size: 150px;
+  display: none;
+  position: absolute;
+}
+
+.active {
+  display: block;
+}
+
+.home {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  z-index: 10;
+}
