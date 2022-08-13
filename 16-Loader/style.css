@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+}
+
+h1 {
+  position: absolute;
+  top: 30px;
+  color: white;
+}
+.video {
+  width: 600px;
+  height: 350px;
+  position: relative;
+}
+.video video {
+  height: auto;
+  width: 100%;
+}
+
+.loader {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  background-color: blueviolet;
+  position: absolute;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 2px 2px;
+  border-radius: 15px;
+  bottom: 15px;
+  left: 2.5%;
+  width: 95%;
+  padding-left: 14px;
+  padding-top: 6px;
+  padding-right: 14px;
+  box-sizing: border-box;
+}
+
+.pause {
+  display: none;
+}
+
+.mute,
+.shrink,
+.enlarge,
+.play,
+.stop,
+.pause,
+.volume {
+  height: 24px;
+  cursor: pointer;
+}
+.shrink {
+  display: none;
+}
+.mute {
+  margin-right: 5px;
+  display: none;
+}
+
+.bar {
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 7px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 2px inset;
+  width: 73%;
+  border-radius: 4px;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.progress_bar {
+  background-color: #fff;
+  border-radius: 4px;
+  height: 100%;
+  cursor: pointer;
+  width: 0px;
+}
+
+.volume_block {
+  display: flex;
+  width: 15%;
+}
+.volume {
+  cursor: pointer;
+  padding-right: 5px;
+}
+
+.volume_bar {
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 7px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 2px inset;
+  border-radius: 4px;
+  margin-top: 4px;
+  width: 80%;
+  cursor: pointer;
+}
+
+.progress_volume {
+  background-color: #fff;
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.home {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.display {
+  display: block;
+}
+
+.cache {
+  display: none;
+}
+
+.pleinEcran {
+  position: absolute;
+  top: 0;
+  width: 1263px;
+  height: 590px;
+}
