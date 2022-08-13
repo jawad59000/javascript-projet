@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>manga video</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <form>
+      <input
+        class="home"
+        type="button"
+        value="Retour!"
+        onclick="history.back()"
+      />
+    </form>
+
+    <h1>Luffy Punches Kaido So Hard</h1>
+    <div class="video">
+      <video
+        onclick="playPauseEcran()"
+        src="./Video/Luffy Punches Kaido So Hard the Original OP Music Starts Playing _ One Piece.mp4"
+      ></video>
+      <div class="loader">
+        <i class="fa-solid fa-play play" onclick="demarer()"></i>
+
+        <i class="fa-solid fa-pause pause" onclick="ptitPause()"></i>
+
+        <i class="fa-solid fa-stop stop" onclick="restart()"></i>
+
+        <div class="bar">
+          <div class="progress_bar"></div>
+        </div>
+
+        <div class="volume_block">
+          <i class="fa-solid fa-volume-high volume"></i>
+          <i class="fa-solid fa-volume-xmark mute"></i>
+
+          <div class="volume_bar">
+            <div class="progress_volume"></div>
+          </div>
+        </div>
+        <i class="fa-solid fa-maximize enlarge"></i>
+        <i class="fa-solid fa-minimize shrink"></i>
+      </div>
+    </div>
+  </body>
+</html>
