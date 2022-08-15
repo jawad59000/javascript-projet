@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lodash</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="tab.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="navBar">
+      <i class="fa-brands fa-wordpress logo" onclick="history.back()"></i>
+      <span class="separeLogo"></span>
+      <div class="version"><input type="button" value="version" /></div>
+      <div class="btnMenu"><i class="fa-solid fa-bars"></i></div>
+    </div>
+    <div class="search">
+      <div class="searching">
+        <i class="fa-brands fa-searchengin btnFunction"></i>
+        <input type="search" placeholder="search" class="recherche" />
+        <i class="fa-solid fa-xmark delete"></i>
+      </div>
+
+      <div class="article">
+        <div class="title">
+          <button type="button" class="btn">
+            <span class="plus-icon">
+              <i class="far fa-plus-square"></i>
+            </span>
+            <span class="minus-icon">
+              <i class="far fa-minus-square"></i>
+            </span>
+          </button>
+          <h2>Array</h2>
+        </div>
+        <div class="functions array">
+          <ul></ul>
+        </div>
+      </div>
+
+      <div class="article">
+        <div class="title">
+          <button type="button" class="btn">
+            <span class="plus-icon">
+              <i class="far fa-plus-square"></i>
+            </span>
+            <span class="minus-icon">
+              <i class="far fa-minus-square"></i>
+            </span>
+          </button>
+          <h2>Collections</h2>
+        </div>
+        <div class="functions collections">
+          <ul></ul>
+        </div>
+      </div>
+    </div>
+    <div class="doc"></div>
+  </body>
+</html>

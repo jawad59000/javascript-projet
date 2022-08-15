@@ -103,36 +103,41 @@ p {
 
 .menu {
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   top: 0;
   left: 0;
   position: absolute;
-  background-color: black;
   z-index: 10;
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+img {
+  width: 100%;
+  height: 100vh;
+  z-index: -30;
+}
 
 .title_menu {
+  cursor: pointer;
   position: fixed;
   display: flex;
   margin-left: 37.5%;
   justify-content: center;
   margin-top: 0px;
-  color: white;
+  color: rgb(172, 150, 24);
   font-size: 50px;
-  text-decoration: underline white;
   animation: animate 1s linear;
+  top: 0px;
   z-index: 200;
-  background-color: black;
+  background-color: transparent;
 }
 
 .projet {
-  text-decoration: none;
-  border: 2px black solid;
+  border: 2px rgb(172, 150, 24) solid;
   color: black;
-  border-radius: 10px;
+  border-radius: 20px;
   font-size: 25px;
   background-color: white;
   width: 300px;
@@ -140,14 +145,47 @@ p {
   margin-top: 30px;
   position: relative;
   z-index: 40;
-  left: 37.5%;
+  left: 0;
 }
+
+.projet a {
+  text-decoration: none;
+  list-style-type: none;
+  box-shadow: none;
+  color: black;
+}
+
 .projets {
-  padding-top: 60px;
+  text-decoration: none;
+  list-style-type: none;
+  width: 360px;
   padding-bottom: 20px;
+  overflow: scroll;
+  height: 85vh;
+  position: absolute;
+  left: 37.4vw;
+  overflow-x: hidden;
+  bottom: 0;
+}
+
+::-webkit-scrollbar {
+  width: 5px !important;
+  background-color: black;
+  border-radius: 20%;
+}
+::-webkit-scrollbar-thumb {
+  height: 1px;
+  border-radius: 20%;
+  background-color: rgb(172, 150, 24);
 }
 
 .projet:hover {
+  background-color: black;
+  color: white;
+  /* opacity: 1; */
+}
+
+.projet a:hover {
   background-color: black;
   color: white;
   /* opacity: 1; */

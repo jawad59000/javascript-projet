@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.navBar {
+  background-color: red;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 68px;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+}
+
+.btnMenu {
+  position: absolute;
+  right: 10px;
+  display: none;
+  color: white;
+  top: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.search {
+  background-color: lightgray;
+  position: fixed;
+  height: 88vh;
+  width: 25vw;
+  top: 68px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px !important;
+  background-color: black;
+}
+::-webkit-scrollbar-thumb {
+  height: 1px;
+  border-radius: 20%;
+  background-color: rgb(172, 24, 24);
+}
+
+.searching {
+  margin-left: 15px;
+}
+
+.searching .delete {
+  z-index: 9;
+  display: none;
+}
+
+.btnFunction {
+  cursor: pointer;
+}
+
+.recherche {
+  background-color: lightgray;
+  border: transparent;
+  border-bottom: 3px black solid;
+  width: 85%;
+  justify-self: center;
+  margin-top: 10px;
+}
+
+.article {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.title {
+  display: flex;
+}
+
+.functions ul,
+li,
+a {
+  margin-left: 12px;
+  text-decoration: none;
+  list-style-type: none;
+  margin-top: 15px;
+  font-size: 20px;
+  box-shadow: none;
+  color: black;
+}
+.functions ul {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.functions button {
+  cursor: pointer;
+  background-color: transparent;
+  border: transparent;
+  margin-left: 12px;
+  text-decoration: none;
+  list-style-type: none;
+  margin-top: 15px;
+  font-size: 20px;
+}
+/* .question-text p {
+  margin-bottom: 0;
+} */
+/* hide text */
+.functions {
+  display: none;
+}
+.minus-icon {
+  display: none;
+}
+.btn {
+  background-color: lightgray;
+  border: transparent;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.menu {
+  padding: 1rem 0 1.5rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  display: block;
+}
+.doc {
+  position: absolute;
+  background-color: black;
+  height: 88vh;
+  overflow: scroll;
+  left: 25vw;
+  top: 68px;
+  width: 75vw;
+  color: white;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+.logo {
+  cursor: pointer;
+  font-size: 60px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.separeLogo {
+  width: 3px;
+  height: 60px;
+  margin-top: 3px;
+  background-color: black;
+  border-radius: 20px;
+}
+
+.version {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.docSubject h1 {
+  color: white;
+  margin-left: 30px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.docSubject .h1 {
+  height: 80px;
+}
+
+.subject {
+  background-color: white;
+  height: 60px;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+.subject p {
+  font-family: sans-serif;
+  margin-left: 50px;
+  font-size: 20px;
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+}
+.desc h3,
+p {
+  margin-left: 30px;
+}
+
+.desc img {
+  height: 120px;
+  justify-self: center;
+}
+
+.displayBtn {
+  display: block;
+}
+
+.display {
+  display: block;
+}
+
+@media screen and (max-width: 780px) {
+  .search {
+    display: none;
+  }
+  .doc {
+    width: 100vw;
+    left: 0;
+  }
+  .btnMenu {
+    display: block;
+  }
+  .showMenu {
+    display: block;
+    position: fixed;
+    width: 200px;
+
+    right: 0;
+    z-index: 40;
+  }
+}

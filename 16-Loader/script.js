@@ -87,7 +87,8 @@ bar.addEventListener("click", function (e) {
   let tempInVideo = video.currentTime;
 
   const dureeTotal = video.duration;
-
+  console.log(video.duration);
+  console.log(dureeTotal);
   let barWidth = bar.clientWidth;
 
   progress_bar_width = (tempInVideo * barWidth) / dureeTotal;
@@ -130,7 +131,6 @@ mute.addEventListener("click", function () {
 
 onmute.addEventListener("click", function () {
   video.muted = false;
-
   mute.classList.remove("cache");
   onmute.classList.remove("display");
 });
@@ -147,7 +147,7 @@ section.addEventListener(
   function () {
     loader.classList.remove("cache");
   },
-  1
+  1000
 );
 
 section.addEventListener(
@@ -157,5 +157,44 @@ section.addEventListener(
 
     loader.classList.add("cache");
   },
-  100
+  1000
 );
+
+let timeInVideo = document.querySelector(".loader .currentTime");
+let restDuration = document.querySelector(".loader .restDuration");
+
+video.addEventListener("loadedmetadata", function () {
+  const durationVideo = video.duration / 60;
+
+  let restDurationVideo = durationVideo;
+  restDurationVideo = Math.round(restDurationVideo * 100) / 100;
+
+  restDuration.innerHTML = restDurationVideo;
+});
+
+video.addEventListener("timeupdate", function () {
+  let time = video.currentTime / 60;
+  time = Math.round(time * 100) / 100;
+  timeInVideo.innerHTML = time;
+
+  const durationVideo = video.duration / 60;
+
+  let restDurationVideo = durationVideo - time;
+  restDurationVideo = Math.round(restDurationVideo * 100) / 100;
+
+  restDuration.innerHTML = restDurationVideo;
+});
+
+let timer;
+const hideControls = () => {
+  if (video.paused); // si la vidéo est en pause on ne cache pas les controles
+  timer = setTimeout(() => {
+    loader.classList.add("cache");
+  }, 2000); // on affiche les controles dans 3s
+};
+
+video.addEventListener("mousemove", () => {
+  loader.classList.remove("cache");
+  clearTimeout(timer); // clear timer when mouse is moving
+  hideControls(); //masquer les contrôles après 3 secondes
+});
