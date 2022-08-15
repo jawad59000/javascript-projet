@@ -6,6 +6,8 @@
 body {
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .navBar {
@@ -61,17 +63,30 @@ body {
   display: none;
 }
 
-.btnFunction {
+.btnSearch {
   cursor: pointer;
+  font-size: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: hwb(0 6% 94%);
 }
 
 .recherche {
   background-color: lightgray;
-  border: transparent;
-  border-bottom: 3px black solid;
+  border: none;
+  border-radius: 10px;
   width: 85%;
   justify-self: center;
-  margin-top: 10px;
+  margin-top: 20px;
+  height: 30px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  padding: 10px;
+  border-bottom: 3px black solid;
+  border-left: 3px black solid;
+  font-size: 18px;
+  color: black;
 }
 
 .article {
@@ -89,13 +104,18 @@ a {
   margin-left: 12px;
   text-decoration: none;
   list-style-type: none;
-  margin-top: 15px;
+  margin-top: 7px;
   font-size: 20px;
   box-shadow: none;
   color: black;
+  margin-bottom: 17px;
 }
 .functions ul {
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 30px;
+  margin-bottom: -23px;
 }
 
 .functions button {
@@ -115,7 +135,10 @@ a {
 .functions {
   display: none;
 }
-.minus-icon {
+.moins {
+  display: none;
+}
+.cache {
   display: none;
 }
 .btn {
@@ -196,7 +219,7 @@ p {
 }
 
 .desc img {
-  height: 120px;
+  min-height: 120px;
   justify-self: center;
 }
 

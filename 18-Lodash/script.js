@@ -1,12 +1,29 @@
 const btns = document.querySelectorAll(".btn");
-const questions = document.querySelectorAll("article");
+const questions = document.querySelector("article");
+const plus = document.querySelectorAll(".plus");
+const moins = document.querySelectorAll(".moins");
 
 btns.forEach(function (btn) {
   btn.addEventListener("click", function (e) {
-    console.log(e.currentTarget.parentElement.nextSibling.nextSibling);
     e.currentTarget.parentElement.nextSibling.nextSibling.classList.toggle(
-      "displayBtn"
+      "display"
     );
+
+    if (
+      e.currentTarget.parentElement.nextSibling.nextSibling.classList.contains(
+        "display"
+      )
+    ) {
+      e.target.classList.add("cache");
+      e.target.parentElement.nextSibling.nextSibling.children[0].classList.add(
+        "display"
+      );
+    } else {
+      e.target.classList.remove("display");
+      e.target.parentElement.previousSibling.previousSibling.children[0].classList.remove(
+        "cache"
+      );
+    }
   });
 });
 
@@ -63,7 +80,6 @@ const btnFunction = document.querySelector(".btnFunction");
 
 inputText.addEventListener("keyup", function () {
   const value = inputText.value;
-  console.log(value);
   const filterCharacter = info.filter((character) => {
     return character.function.includes(value);
   });
@@ -72,7 +88,6 @@ inputText.addEventListener("keyup", function () {
 
 inputText.addEventListener("keyup", function () {
   const value = inputText.value;
-  console.log(value);
   const filterCharacter = array.filter((character) => {
     return character.value.includes(value);
   });
@@ -81,14 +96,13 @@ inputText.addEventListener("keyup", function () {
 
 inputText.addEventListener("keyup", function () {
   const value = inputText.value;
-  console.log(value);
   const filterCharacter = collections.filter((character) => {
     return character.value.includes(value);
   });
   displayLiCollections(filterCharacter);
 });
 
-const fonctionArray = document.querySelector(".array");
+const fonctionArray = document.querySelector(".array ul");
 
 function displayLiArray(array) {
   const displayFunction = array.map(function (func) {
@@ -102,8 +116,7 @@ function displayLiArray(array) {
   fonctionArray.innerHTML = displayFunction.join("");
 }
 
-const fonctionCollections = document.querySelector(".collections");
-console.log(fonctionCollections);
+const fonctionCollections = document.querySelector(".collections ul");
 
 function displayLiCollections(collections) {
   const displayFunction = collections.map(function (func) {
