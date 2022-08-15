@@ -11,6 +11,7 @@ body {
   background-image: url("./yamamoto.jpg");
   background-size: cover;
   background-attachment: fixed;
+  overflow-y: hidden;
 }
 
 .home {
