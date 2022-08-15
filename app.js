@@ -53,3 +53,13 @@ btn.addEventListener("click", function () {
     fermer.style.display = "none";
   }
 });
+
+const projet = document.querySelector(".projet");
+if ((menu.style.display = "block")) {
+  From(
+    projet,
+    2,
+    { transform: "scale(0)", height: 0, opacity: 0, ease: "power2.out" },
+    0.3
+  );
+}

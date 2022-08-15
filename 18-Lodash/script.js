@@ -133,5 +133,5 @@ function displayLiCollections(collections) {
 window.addEventListener("DOMContentLoaded", function () {
   display(info);
   displayLiArray(array);
-  displayLiCollections(collections);
+  // displayLiCollections(collections);
 });
