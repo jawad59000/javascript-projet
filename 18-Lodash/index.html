@@ -20,7 +20,11 @@
     <div class="navBar">
       <i class="fa-brands fa-wordpress logo" onclick="history.back()"></i>
       <span class="separeLogo"></span>
-      <div class="version"><input type="button" value="version" /></div>
+      <div class="game">
+        <i class="fa-solid fa-dice-six ga"></i>
+        <i class="fa-solid fa-ghost ga"></i>
+        <i class="fa-solid fa-scroll ga"></i>
+      </div>
       <div class="btnMenu"><i class="fa-solid fa-bars"></i></div>
     </div>
     <div class="search">
@@ -28,41 +32,26 @@
         <input type="search" placeholder="search" class="recherche" />
         <i class="fa-brands fa-searchengin btnSearch"></i>
       </div>
-
-      <div class="article">
-        <div class="title">
-          <button type="button" class="btn">
-            <span class="plus-icon">
-              <i class="far fa-plus-square plus"></i>
-            </span>
-            <span class="minus-icon">
-              <i class="far fa-minus-square moins"></i>
-            </span>
-          </button>
-          <h2>Array</h2>
-        </div>
-        <div class="functions array">
-          <ul></ul>
-        </div>
-      </div>
-
-      <div class="article">
-        <div class="title">
-          <button type="button" class="btn">
-            <span class="plus-icon">
-              <i class="far fa-plus-square plus"></i>
-            </span>
-            <span class="minus-icon">
-              <i class="far fa-minus-square moins"></i>
-            </span>
-          </button>
-          <h2>Collections</h2>
-        </div>
-        <div class="functions collections">
-          <ul></ul>
+      <div class="container">
+        <div class="article">
+          <div class="title">
+            <button type="button" class="btn" id="btn">
+              <span class="plus-icon">
+                <i class="far fa-plus-square plus"></i>
+              </span>
+              <span class="minus-icon">
+                <i class="far fa-minus-square moins"></i>
+              </span>
+            </button>
+            <h2>Array</h2>
+          </div>
+          <div class="functions array">
+            <ul></ul>
+          </div>
         </div>
       </div>
     </div>
     <div class="doc"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
   </body>
 </html>

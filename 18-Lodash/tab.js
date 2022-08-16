@@ -1,5 +1,6 @@
 const info = [
   {
+    type: "Function for array",
     title: "Array Function",
     function: "_.chunk(array, [size=1])",
     title1: "Description",
@@ -14,6 +15,7 @@ const info = [
     id: "chunk",
   },
   {
+    type: "Function for array",
     function: "_.compact(array)",
     title1: "Description",
     desc: `Creates an array with all falsey values removed. The values false, null, 0, "", undefined, and NaN are falsey.`,
@@ -28,6 +30,7 @@ const info = [
     id: "compact",
   },
   {
+    type: "Function for array",
     function: "_.concat(array, [values])",
     title1: "Description",
     desc: `Creates a new array concatenating array with any additional arrays and/or values.`,
@@ -41,6 +44,7 @@ const info = [
     id: "concat",
   },
   {
+    type: "Function for array",
     function: "_.difference(array, [values])",
     title1: "Description",
     desc: "Creates an array of array values not included in the other given arrays using SameValueZero for equality comparisons. The order and references of result values are determined by the first array.",
@@ -55,6 +59,7 @@ const info = [
     id: "difference",
   },
   {
+    type: "Function for array",
     function: "_.differenceBy(array, [values], [iteratee=_.identity])",
     title1: "Description",
     desc: `This method is like _.difference except that it accepts iteratee which is invoked for each element of array and values to generate the criterion by which they're compared. The order and references of result values are determined by the first array. The iteratee is invoked with one argument:
@@ -71,6 +76,7 @@ const info = [
   },
 
   {
+    type: "Function for array",
     function: "_.differenceWith(array, [values], [comparator])",
     title1: "Description",
     desc: `This method is like _.difference except that it accepts comparator which is invoked to compare elements of array to values. The order and references of result values are determined by the first array. The comparator is invoked with two arguments: (arrVal, othVal).`,
@@ -85,6 +91,7 @@ const info = [
     id: "differenceWith",
   },
   {
+    type: "Function for array",
     function: "_.drop(array, [n=1])",
     title1: "Description",
     desc: `Creates a slice of array with n elements dropped from the beginning.`,
@@ -98,6 +105,7 @@ const info = [
     id: "drop",
   },
   {
+    type: "Function for array",
     function: "_.dropRight(array, [n=1])",
     title1: "Description",
     desc: `Creates a slice of array with n elements dropped from the end.`,
@@ -111,6 +119,7 @@ const info = [
     id: "dropRight",
   },
   {
+    type: "Function for array",
     function: "_.dropRightWhile(array, [predicate=_.identity])",
     title1: "Description",
     desc: `Creates a slice of array excluding elements dropped from the end. Elements are dropped until predicate returns falsey. The predicate is invoked with three arguments: (value, index, array).`,
@@ -124,6 +133,7 @@ const info = [
     id: "dropRightWhile",
   },
   {
+    type: "Function for array",
     function: "_.dropWhile(array, [predicate=_.identity])",
     title1: "Description",
     desc: `Creates a slice of array excluding elements dropped from the beginning. Elements are dropped until predicate returns falsey. The predicate is invoked with three arguments: (value, index, array).`,
@@ -137,6 +147,7 @@ const info = [
     id: "dropWhile",
   },
   {
+    type: "Function for array",
     function: "_.fill(array, value, [start=0], [end=array.length])",
     title1: "Description",
     desc: `Fills elements of array with value from start up to, but not including, end.`,
@@ -150,6 +161,7 @@ const info = [
     id: "fill",
   },
   {
+    type: "Function for array",
     function: "_.findIndex(array, [predicate=_.identity], [fromIndex=0])",
     title1: "Description",
     desc: `This method is like _.find except that it returns the index of the first element predicate returns truthy for instead of the element itself.`,
@@ -164,6 +176,7 @@ const info = [
     id: "findIndex",
   },
   {
+    type: "Function for array",
     function:
       "_.findLastIndex(array, [predicate=_.identity], [fromIndex=array.length-1])",
     title1: "Description",
@@ -179,6 +192,7 @@ const info = [
     id: "findLastIndex",
   },
   {
+    type: "Function for array",
     function: "_.flatten(array)",
     title1: "Description",
     desc: `Flattens array a single level deep.`,
@@ -191,6 +205,7 @@ const info = [
     id: "flatten",
   },
   {
+    type: "Function for array",
     function: "_.flattenDeep(array)",
     title1: "Description",
     desc: `Recursively flattens array.`,
@@ -203,6 +218,7 @@ const info = [
     id: "flattenDeep",
   },
   {
+    type: "Function for array",
     function: "_.flattenDepth(array, [depth=1])",
     title1: "Description",
     desc: `Recursively flatten array up to depth times.`,
@@ -216,6 +232,7 @@ const info = [
     id: "flattenDepth",
   },
   {
+    type: "Function for array",
     function: "_.fromPairs(pairs)",
     title1: "Description",
     desc: `The inverse of _.toPairs; this method returns an object composed from key-value pairs.`,
@@ -228,6 +245,7 @@ const info = [
     id: "fromPairs",
   },
   {
+    type: "Function for array",
     function: "_.head(array)",
     title1: "Description",
     desc: `Gets the first element of array.`,
@@ -240,6 +258,7 @@ const info = [
     id: "head",
   },
   {
+    type: "Function for array",
     function: "_.indexOf(array, value, [fromIndex=0])",
     title1: "Description",
     desc: `Gets the first element of array.`,
@@ -256,30 +275,30 @@ const info = [
   },
 ];
 
-const array = [
-  { link: "#chunk", value: "_.chunk" },
-  { link: "#compact", value: "_.compact" },
-  { link: "#concat", value: "_.concat" },
-  { link: "#difference", value: "_.difference" },
-  { link: "#differenceBy", value: "_.differenceBy" },
-  { link: "#differenceWith", value: "_.differenceWith" },
-  { link: "#drop", value: "_.drop" },
-  { link: "#dropRight", value: "_.dropRight" },
-  { link: "#dropRightWhile", value: "_.dropRightWhile" },
-  { link: "#dropWhile", value: "_.dropWhile" },
-  { link: "#fill", value: "_.fill" },
-  { link: "#findIndex", value: "_.findIndex" },
-  { link: "#findLastIndex", value: "_.findLastIndex" },
-  { link: "#flatten", value: "_.flatten" },
-  { link: "#flattenDeep", value: "_.flattenDeep" },
-  { link: "#flattenDepth", value: "_.flattenDepth" },
-  { link: "#fromPairs", value: "_.fromPairs" },
-  { link: "#head", value: "_.head" },
-  { link: "#indexOf", value: "_.indexOf" },
+const li = [
+  { link: "#chunk", value: "_.chunk", type: "Array" },
+  { link: "#compact", value: "_.compact", type: "Array" },
+  { link: "#concat", value: "_.concat", type: "Array" },
+  { link: "#difference", value: "_.difference", type: "Array" },
+  { link: "#differenceBy", value: "_.differenceBy", type: "Array" },
+  { link: "#differenceWith", value: "_.differenceWith", type: "Array" },
+  { link: "#drop", value: "_.drop", type: "Array" },
+  { link: "#dropRight", value: "_.dropRight", type: "Array" },
+  { link: "#dropRightWhile", value: "_.dropRightWhile", type: "Array" },
+  { link: "#dropWhile", value: "_.dropWhile", type: "Array" },
+  { link: "#fill", value: "_.fill", type: "array" },
+  { link: "#findIndex", value: "_.findIndex", type: "Array" },
+  { link: "#findLastIndex", value: "_.findLastIndex", type: "Array" },
+  { link: "#flatten", value: "_.flatten", type: "Array" },
+  { link: "#flattenDeep", value: "_.flattenDeep", type: "Array" },
+  { link: "#flattenDepth", value: "_.flattenDepth", type: "Array" },
+  { link: "#fromPairs", value: "_.fromPairs", type: "Array" },
+  { link: "#head", value: "_.head", type: "zigoto" },
+  { link: "#indexOf", value: "_.indexOf", type: "Collections" },
 ];
 
 // const collections = [
-//   { link: "#bibi", value: "_.bibi" },
+//   { link: "#collection", value: "_.collection" },
 //   { link: "#cc", value: "_.dd" },
 //   { link: "#zz", value: "_.zz" },
 //   { link: "#tt", value: "_.tt" },

@@ -11,7 +11,7 @@ body {
 }
 
 .navBar {
-  background-color: red;
+  background-color: rgb(236, 46, 46);
   position: fixed;
   top: 0;
   left: 0;
@@ -21,22 +21,41 @@ body {
   display: flex;
 }
 
+.game {
+  display: flex;
+  position: absolute;
+  left: 30%;
+  top: 4px;
+  font-size: 35px;
+  width: 200px;
+  justify-content: space-between;
+  color: black;
+  background-color: rgb(255, 255, 255, 0.5);
+  padding: 11px;
+  border: 2px black solid;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+/* .ga {
+} */
 .btnMenu {
   position: absolute;
-  right: 10px;
+  right: 20px;
   display: none;
   color: white;
   top: 20px;
-  font-size: 20px;
+  font-size: 30px;
   cursor: pointer;
 }
 
 .search {
-  background-color: lightgray;
+  background-color: rgb(0, 0, 0, 0.8);
+  color: white;
   position: fixed;
   height: 88vh;
   width: 25vw;
-  top: 68px;
+  top: 65px;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -46,11 +65,12 @@ body {
 
 ::-webkit-scrollbar {
   width: 10px !important;
-  background-color: black;
+  background-color: white;
+  /* padding-top: 20px; */
 }
 ::-webkit-scrollbar-thumb {
-  height: 1px;
-  border-radius: 20%;
+  height: 40px;
+  border-radius: 20px;
   background-color: rgb(172, 24, 24);
 }
 
@@ -69,11 +89,11 @@ body {
   position: absolute;
   top: 20px;
   right: 20px;
-  color: hwb(0 6% 94%);
+  color: white;
 }
 
 .recherche {
-  background-color: lightgray;
+  background-color: black;
   border: none;
   border-radius: 10px;
   width: 85%;
@@ -83,10 +103,13 @@ body {
   font-weight: 600;
   letter-spacing: 1.5px;
   padding: 10px;
-  border-bottom: 3px black solid;
-  border-left: 3px black solid;
+  border-bottom: 3px white solid;
+  border-left: 3px white solid;
   font-size: 18px;
-  color: black;
+  color: white;
+}
+input:focus {
+  outline: 0;
 }
 
 .article {
@@ -101,18 +124,18 @@ body {
 .functions ul,
 li,
 a {
-  margin-left: 12px;
+  margin-left: 3px;
   text-decoration: none;
   list-style-type: none;
   margin-top: 7px;
   font-size: 20px;
   box-shadow: none;
-  color: black;
+  color: white;
   margin-bottom: 17px;
 }
 .functions ul {
-  border-top: 1px solid rgba(0, 0, 0, 0.3);
-  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  border-top: 1px white dashed;
+  border-left: 1px white dashed;
   padding: 10px;
   border-radius: 30px;
   margin-bottom: -23px;
@@ -142,10 +165,11 @@ a {
   display: none;
 }
 .btn {
-  background-color: lightgray;
   border: transparent;
   cursor: pointer;
   margin-right: 5px;
+  background-color: transparent;
+  color: white;
 }
 
 .menu {
@@ -159,7 +183,7 @@ a {
   height: 88vh;
   overflow: scroll;
   left: 25vw;
-  top: 68px;
+  top: 65px;
   width: 75vw;
   color: white;
   z-index: 1;
@@ -191,22 +215,28 @@ a {
   margin-left: 30px;
   margin-top: 30px;
   margin-bottom: 20px;
+  font-weight: 100;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
 }
 .docSubject .h1 {
   height: 80px;
 }
 
 .subject {
-  background-color: white;
   height: 60px;
   color: black;
   display: flex;
+  font-weight: 600;
   align-items: center;
+  background-color: lightgrey;
+  padding: 20px;
 }
 .subject p {
   font-family: sans-serif;
   margin-left: 50px;
   font-size: 20px;
+  color: black;
 }
 
 .desc {
@@ -249,5 +279,13 @@ p {
 
     right: 0;
     z-index: 40;
+  }
+  .search {
+    top: 65px;
+    border-left: 2px solid white;
+    border-radius: 10px;
+    border-right: transparent;
+    z-index: 9;
+    background-color: black;
   }
 }

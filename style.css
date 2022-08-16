@@ -50,7 +50,7 @@ p {
   color: rgb(172, 150, 24);
   font-size: 30px;
   border: rgb(172, 150, 24) 5px solid;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 10px;
   text-align: center;
 }
