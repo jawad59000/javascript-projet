@@ -79,7 +79,7 @@ ouvert.addEventListener("click", function () {
       projets,
       2,
       {
-        transform: "translateX(-1000px)",
+        height: "0px",
         ease: "power2.out",
       },
       0.3,
