@@ -9,6 +9,72 @@ const enLarge = document.querySelector(".loader .enlarge");
 const shrink = document.querySelector(".loader .shrink");
 const volumeBar = document.querySelector(".loader .volume_bar");
 const loader = document.querySelector(".loader");
+const cadre = document.querySelector(".contour");
+const title = document.querySelector("h1");
+
+window.addEventListener("load", function () {
+  const TL = gsap.timeline({ paused: true });
+
+  TL.staggerFrom(
+    title,
+    3,
+    {
+      left: 50,
+      opacity: 0,
+      transform: "translateY(-10000px)",
+      ease: "power2.out",
+    },
+    0.3,
+    "-=1.5"
+  )
+    .staggerFrom(
+      cadre,
+      2,
+      {
+        transform: "scale(0)",
+        height: 0,
+        opacity: 0,
+        ease: "power2.out",
+      },
+      0.3
+    )
+
+    .staggerFrom(
+      section,
+      2,
+      { left: 50, opacity: 0, transform: "scale(0)", ease: "power2.out" },
+      0.3,
+      "-=1.5"
+    )
+    .staggerFrom(
+      video,
+      2,
+      { transform: "scale(0)", opacity: 0, ease: "power2.out" },
+      0.3,
+      "-=2.9"
+    )
+    .staggerFrom(
+      loader,
+      2,
+      {
+        width: "0px",
+        // transform: "scale(0)",
+        opacity: 0.6,
+        ease: "power2.out",
+      },
+      0.3,
+      "-=1.3"
+    );
+  // .staggerFrom(
+  //   section,
+  //   2,
+  //   { transform: "scale(0)", opacity: 0, ease: "power2.out" },
+  //   0.3,
+  //   "-=1"
+  // );
+
+  TL.play();
+});
 
 function demarer() {
   video.play();
