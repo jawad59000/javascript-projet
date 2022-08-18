@@ -31,22 +31,32 @@
         onclick="playPauseEcran()"
         src="./Video/Luffy Punches Kaido So Hard the Original OP Music Starts Playing _ One Piece.mp4"
       ></video>
+      <div class="viewTime">00:00</div>
       <div class="loader">
+        <div class="arTime"><i class="fa-solid fa-backward"></i></i></div>
         <i class="fa-solid fa-play play" onclick="demarer()"></i>
 
         <i class="fa-solid fa-pause pause" onclick="ptitPause()"></i>
 
+         <div class="avTime"><i class="fa-solid fa-forward"></i></div>
+
         <i class="fa-solid fa-stop stop" onclick="restart()"></i>
 
+       
+<div class="durationTime">
         <div class="currentTime">00:00</div>
+        <div class="separation"> / </div>
 
+        <div class="restDuration">00:00</div>
+</div>
         <div class="bar">
           <div class="progress_bar"></div>
         </div>
 
-        <div class="restDuration">00:00</div>
 
-        <div class="volume_block">
+
+ <div class="volume_block">
+          
           <i class="fa-solid fa-volume-high volume"></i>
           <i class="fa-solid fa-volume-xmark mute"></i>
 
@@ -55,8 +65,37 @@
           </div>
         </div>
 
+
+
+     
+        <i class="fa-solid fa-repeat repeat"></i>
+
+       
+         <div class="speed">
+          <div class="list">
+            <ul>
+             <li data-speed="0.25">0.25</li>
+             <li data-speed="0.5">0.5</li>
+             <li data-speed="0.75">0.75</li>
+             <li data-speed="1">Normal</li>
+             <li data-speed="1.25">1.25</li>
+             <li data-speed="1.5">1.5</li>
+             <li data-speed="1.75">1.75</li>
+             <li data-speed="2">2</li>
+            </ul>
+          </div> 
+          <div class="btnRg">
+         <i class="fa-solid fa-gear oreg"></i>
+          <i class="fa-solid fa-wrench freg"></i>
+            </div>
+
+          
+         </div>
+
         <i class="fa-solid fa-maximize enlarge"></i>
         <i class="fa-solid fa-minimize shrink"></i>
+
+       
       </div>
     </div>
   </body>

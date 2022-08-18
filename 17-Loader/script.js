@@ -65,10 +65,7 @@ video.addEventListener("dblclick", function () {
     enLarge.classList.add("cache");
     section.requestFullscreen();
     shrink.classList.add("display");
-  }
-});
-video.addEventListener("dblclick", function () {
-  if (enLarge.classList.contains("cache")) {
+  } else {
     document.exitFullscreen();
     enLarge.classList.remove("cache");
     shrink.classList.remove("display");
@@ -117,6 +114,12 @@ volumeBar.addEventListener("click", function (e) {
   document.querySelector(
     ".loader .volume_bar .progress_volume"
   ).style.width = `${positionVolume * volumeBarWidth}px`;
+
+  if ((video.muted = true)) {
+    video.muted = false;
+    mute.classList.remove("cache");
+    onmute.classList.remove("display");
+  }
   // console.log(lecturePosition);
 });
 
@@ -127,12 +130,16 @@ mute.addEventListener("click", function () {
   video.muted = true;
   mute.classList.add("cache");
   onmute.classList.add("display");
+  document.querySelector(".loader .volume_bar .progress_volume").style.width =
+    "0px";
 });
 
 onmute.addEventListener("click", function () {
   video.muted = false;
   mute.classList.remove("cache");
   onmute.classList.remove("display");
+  document.querySelector(".loader .volume_bar .progress_volume").style.width =
+    "50%";
 });
 
 function loaderCache() {
@@ -142,59 +149,142 @@ function loaderCache() {
   }
 }
 
-section.addEventListener(
-  "mousemove",
-  function () {
-    loader.classList.remove("cache");
-  },
-  1000
-);
-
-section.addEventListener(
-  "mouseout",
-  function () {
-    const timer = 2;
-
-    loader.classList.add("cache");
-  },
-  1000
-);
-
 let timeInVideo = document.querySelector(".loader .currentTime");
 let restDuration = document.querySelector(".loader .restDuration");
 
-video.addEventListener("loadedmetadata", function () {
-  const durationVideo = video.duration / 60;
-
-  let restDurationVideo = durationVideo;
-  restDurationVideo = Math.round(restDurationVideo * 100) / 100;
-
-  restDuration.innerHTML = restDurationVideo;
+video.addEventListener("loadedmetadata", function (e) {
+  let durationVideo = e.target.duration;
+  let totalMin = Math.floor(durationVideo / 60);
+  let totalSec = Math.floor(durationVideo % 60);
+  totalMin < 10 ? (totalMin = "0" + totalMin) : totalMin;
+  totalSec < 10 ? (totalSec = "0" + totalSec) : totalSec;
+  restDuration.innerHTML = `${totalMin}:${totalSec}`;
 });
 
-video.addEventListener("timeupdate", function () {
-  let time = video.currentTime / 60;
-  time = Math.round(time * 100) / 100;
-  timeInVideo.innerHTML = time;
+video.addEventListener("timeupdate", function (e) {
+  let currentVideoTime = e.target.currentTime;
+  let currentMin = Math.floor(currentVideoTime / 60);
+  let currentSec = Math.floor(currentVideoTime % 60);
+  currentMin < 10 ? (currentMin = "0" + currentMin) : currentMin;
+  currentSec < 10 ? (currentSec = "0" + currentSec) : currentSec;
+  timeInVideo.innerHTML = `${currentMin}:${currentSec}`;
 
-  const durationVideo = video.duration / 60;
+  // let durationVideo = e.target.duration;
+  // let totalMin = Math.floor(durationVideo / 60) - currentMin;
+  // let totalSec = Math.floor(durationVideo % 60) - currentSec;
+  // totalSec < 10 ? (totalSec = "0" + totalSec) : totalSec;
+  // totalMin < 10 ? (totalMin = "0" + totalMin) : totalMin;
 
-  let restDurationVideo = durationVideo - time;
-  restDurationVideo = Math.round(restDurationVideo * 100) / 100;
-
-  restDuration.innerHTML = restDurationVideo;
+  // restDuration.innerHTML = `${totalMin}:${totalSec}`;
+  // console.log(totalSec);
+  if (video.ended) {
+    pause.classList.remove("display");
+    play.classList.remove("cache");
+  }
 });
 
 let timer = 2;
 const hideControls = () => {
-  if (video.paused); // si la vidéo est en pause on ne cache pas les controles
-  timer = setTimeout(() => {
-    loader.classList.add("cache");
-  }, 2000); // on affiche les controles dans 3s
-};
-
+  if (video.paused) {
+    // si la vidéo est en pause on ne cache pas les controles
+  } else {
+    timer = setTimeout(() => {
+      loader.classList.add("cache");
+    }, 2000);
+  }
+}; // on affiche les controles dans 3s
 video.addEventListener("mousemove", () => {
   loader.classList.remove("cache");
   clearTimeout(timer); // clear timer when mouse is moving
   hideControls(); //masquer les contrôles après 3 secondes
 });
+
+const arTime = document.querySelector(".arTime");
+const avTime = document.querySelector(".avTime");
+
+arTime.addEventListener("click", function () {
+  video.currentTime -= 10;
+  console.log(video.currentTime);
+});
+
+avTime.addEventListener("click", function () {
+  video.currentTime += 10;
+});
+
+const viewTimeArea = document.querySelector(".viewTime");
+
+viewTimeArea.style.display = "none";
+
+bar.addEventListener("mousemove", function (e) {
+  let progressWidthVal = bar.clientWidth;
+  let x = e.offsetX;
+  viewTimeArea.style.setProperty("--x", `${x}px`);
+  viewTimeArea.style.display = "block";
+  bar.style.display = "block";
+  let videoDuration = video.duration;
+  let progressTime = Math.floor((x / progressWidthVal) * videoDuration);
+  let currentMin = Math.floor(progressTime / 60);
+  let currentSec = Math.floor(progressTime % 60);
+  currentMin < 10 ? (currentMin = "0" + currentMin) : currentMin;
+  currentSec < 10 ? (currentSec = "0" + currentSec) : currentSec;
+  viewTimeArea.innerHTML = `${currentMin}:${currentSec}`;
+});
+
+bar.addEventListener("mouseleave", function () {
+  viewTimeArea.style.display = "none";
+});
+
+video.addEventListener("ended", function () {
+  if (repeat.classList.contains("active")) {
+    video.play();
+  }
+});
+
+const replay = document.querySelector(".replay");
+const repeat = document.querySelector(".repeat");
+const noRepeat = document.querySelector(".noRepeat");
+
+repeat.addEventListener("click", function () {
+  repeat.classList.toggle("active");
+});
+
+const freg = document.querySelector(".freg");
+const oreg = document.querySelector(".oreg");
+
+const list = document.querySelector(".list");
+list.classList.add("cache");
+freg.style.display = "none";
+
+oreg.addEventListener("click", function () {
+  list.style.display = "block";
+  freg.style.display = "block";
+  oreg.style.display = "none";
+});
+
+freg.addEventListener("click", function () {
+  list.style.display = "none";
+  oreg.style.display = "block";
+  freg.style.display = "none";
+});
+
+const playBack = [...document.querySelectorAll("li")];
+console.log(playBack);
+
+playBack.forEach((event) => {
+  event.addEventListener("click", function () {
+    removeClassActive();
+    event.classList.add("actives");
+    let speed = event.getAttribute("data-speed");
+    console.log(event.getAttribute("data-speed"));
+    video.playbackRate = speed;
+    list.style.display = "none";
+    oreg.style.display = "block";
+    freg.style.display = "none";
+  });
+});
+
+function removeClassActive() {
+  playBack.forEach((event) => {
+    event.classList.remove("actives");
+  });
+}
