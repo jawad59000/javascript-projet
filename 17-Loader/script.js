@@ -99,7 +99,9 @@ bar.addEventListener("click", function (e) {
   video.currentTime = lecturePosition;
   // console.log(lecturePosition);
 });
-
+const volumeProgress = document.querySelector(
+  ".loader .volume_bar .progress_volume"
+);
 volumeBar.addEventListener("click", function (e) {
   let volumeBarWidth = volumeBar.clientWidth;
 
@@ -183,17 +185,23 @@ video.addEventListener("timeupdate", function (e) {
   }
 });
 
-let timer = 2;
+let timer;
+
 const hideControls = () => {
-  if (video.paused) {
+  if (video.paused || oreg.classList.contains("cache")) {
     // si la vidéo est en pause on ne cache pas les controles
   } else {
     timer = setTimeout(() => {
       loader.classList.add("cache");
-    }, 2000);
+    }, 3000);
   }
 }; // on affiche les controles dans 3s
 video.addEventListener("mousemove", () => {
+  loader.classList.remove("cache");
+  clearTimeout(timer); // clear timer when mouse is moving
+  hideControls(); //masquer les contrôles après 3 secondes
+});
+loader.addEventListener("mousemove", () => {
   loader.classList.remove("cache");
   clearTimeout(timer); // clear timer when mouse is moving
   hideControls(); //masquer les contrôles après 3 secondes
@@ -204,7 +212,26 @@ const avTime = document.querySelector(".avTime");
 
 arTime.addEventListener("click", function () {
   video.currentTime -= 10;
-  console.log(video.currentTime);
+});
+
+window.addEventListener("keydown", function (e) {
+  e.preventDefault();
+  if (video.currentTime > 0 && e.keyCode === 37) {
+    video.currentTime -= 10;
+  }
+  if (video.currentTime > 0 && e.keyCode === 39) {
+    video.currentTime += 10;
+  }
+
+  if (video.currentTime > 0 && video.paused && e.keyCode === 32) {
+    play.classList.add("cache");
+    pause.classList.add("display");
+    video.play();
+  } else if (video.played && e.keyCode === 32) {
+    play.classList.remove("cache");
+    pause.classList.remove("display");
+    video.pause();
+  }
 });
 
 avTime.addEventListener("click", function () {
@@ -258,17 +285,16 @@ freg.style.display = "none";
 oreg.addEventListener("click", function () {
   list.style.display = "block";
   freg.style.display = "block";
-  oreg.style.display = "none";
+  oreg.classList.add("cache");
 });
 
 freg.addEventListener("click", function () {
   list.style.display = "none";
-  oreg.style.display = "block";
+  oreg.classList.remove("cache");
   freg.style.display = "none";
 });
 
 const playBack = [...document.querySelectorAll("li")];
-console.log(playBack);
 
 playBack.forEach((event) => {
   event.addEventListener("click", function () {
@@ -278,7 +304,7 @@ playBack.forEach((event) => {
     console.log(event.getAttribute("data-speed"));
     video.playbackRate = speed;
     list.style.display = "none";
-    oreg.style.display = "block";
+    oreg.classList.remove("cache");
     freg.style.display = "none";
   });
 });
@@ -288,3 +314,7 @@ function removeClassActive() {
     event.classList.remove("actives");
   });
 }
+
+// window.addEventListener("keydown", function (evt) {
+//   console.log(evt);
+// });
