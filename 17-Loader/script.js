@@ -260,12 +260,16 @@ const hideControls = () => {
   } else {
     timer = setTimeout(() => {
       loader.classList.add("fantome");
+      if (loader.style.opacity == 0) {
+        loader.classList.add("cache");
+      }
     }, 3000);
   }
 }; // on affiche les controles dans 3s
 
 video.addEventListener("mousemove", () => {
   loader.classList.remove("fantome");
+  loader.classList.remove("cache");
 
   clearTimeout(timer); // clear timer when mouse is moving
   magicMouse();

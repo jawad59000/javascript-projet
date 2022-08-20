@@ -407,7 +407,7 @@ li:hover {
     width: 400px;
     height: 280px;
     /* border: none; */
-    top: 25%;
+    top: 27%;
   }
   h1 {
     position: absolute;
@@ -418,5 +418,71 @@ li:hover {
   }
   .blockFin {
     width: 170px;
+  }
+  .logo1 {
+    position: absolute;
+    width: 150px;
+    height: 90px;
+    top: 190px;
+    left: 55px;
+    transition: all 4s ease-in-out;
+    animation: luffy2 infinite 4s;
+  }
+  .logo2 {
+    position: absolute;
+    width: 150px;
+    height: 90px;
+    top: 190px;
+    right: 55px;
+    transition: all 4s ease-in-out;
+    animation: luffy infinite 4s;
+  }
+}
+
+@media (max-width: 390px) {
+  .video {
+    width: 390px;
+    height: 360px;
+    /* display: ; */
+  }
+  .contour {
+    left: 0px;
+    width: 190px;
+    height: 220px;
+    border: none;
+    /* top: 25%; */
+  }
+  h1 {
+    position: absolute;
+    top: 40px;
+    font-size: 20px;
+  }
+  .block1 {
+    width: 180px;
+  }
+  .blockFin {
+    width: 160px;
+  }
+
+  .volume_bar {
+    display: block;
+  }
+  .logo1 {
+    position: absolute;
+    width: 150px;
+    height: 90px;
+    top: 120px;
+    left: 120px;
+    transition: all 4s ease-in-out;
+    animation: luffy2 infinite 4s;
+  }
+  .logo2 {
+    position: absolute;
+    width: 150px;
+    height: 90px;
+    top: 690px;
+    right: 120px;
+    transition: all 4s ease-in-out;
+    animation: luffy infinite 4s;
   }
 }
