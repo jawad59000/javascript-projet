@@ -450,6 +450,7 @@ li:hover {
     width: 190px;
     height: 220px;
     border: none;
+    top: 160px;
     /* top: 25%; */
   }
   h1 {
@@ -469,19 +470,19 @@ li:hover {
   }
   .logo1 {
     position: absolute;
-    width: 150px;
-    height: 90px;
-    top: 120px;
-    left: 120px;
+    width: 100px;
+    height: 50px;
+    top: 100px;
+    left: 145px;
     transition: all 4s ease-in-out;
     animation: luffy2 infinite 4s;
   }
   .logo2 {
     position: absolute;
-    width: 150px;
-    height: 90px;
-    top: 690px;
-    right: 120px;
+    width: 100px;
+    height: 50px;
+    top: 610px;
+    right: 145px;
     transition: all 4s ease-in-out;
     animation: luffy infinite 4s;
   }
