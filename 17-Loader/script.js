@@ -52,19 +52,8 @@ window.addEventListener("load", function () {
       { transform: "scale(0)", opacity: 0, ease: "power2.out" },
       0.3,
       "-=2.9"
-    )
-    .staggerFrom(
-      loader,
-      2,
-      {
-        width: "0px",
-        // transform: "scale(0)",
-        opacity: 0.6,
-        ease: "power2.out",
-      },
-      0.3,
-      "-=1.3"
     );
+
   // .staggerFrom(
   //   section,
   //   2,
@@ -80,7 +69,6 @@ function demarer() {
   video.play();
   play.classList.add("cache");
   pause.classList.add("display");
-  loaderCache();
 }
 
 function ptitPause() {
@@ -94,7 +82,6 @@ function playPauseEcran() {
     video.play();
     play.classList.add("cache");
     pause.classList.add("display");
-    loaderCache();
   } else {
     video.pause();
     pause.classList.remove("display");
@@ -252,24 +239,42 @@ video.addEventListener("timeupdate", function (e) {
 });
 
 let timer;
+let timeout;
+let isHidden = false;
 
+function magicMouse() {
+  timeout = setTimeout(function () {
+    if (!isHidden && section.requestFullscreen) {
+      section.style.cursor = "none";
+      isHidden = true;
+    }
+  }, 6000);
+  if (isHidden) {
+    section.style.cursor = "auto";
+    isHidden = false;
+  }
+}
 const hideControls = () => {
   if (video.paused || oreg.classList.contains("cache")) {
     // si la vidéo est en pause on ne cache pas les controles
   } else {
     timer = setTimeout(() => {
-      loader.classList.add("cache");
+      loader.classList.add("fantome");
     }, 3000);
   }
 }; // on affiche les controles dans 3s
+
 video.addEventListener("mousemove", () => {
-  loader.classList.remove("cache");
+  loader.classList.remove("fantome");
+
   clearTimeout(timer); // clear timer when mouse is moving
+  magicMouse();
   hideControls(); //masquer les contrôles après 3 secondes
 });
 loader.addEventListener("mousemove", () => {
-  loader.classList.remove("cache");
+  loader.classList.remove("fantome");
   clearTimeout(timer); // clear timer when mouse is moving
+  magicMouse();
   hideControls(); //masquer les contrôles après 3 secondes
 });
 
@@ -277,7 +282,9 @@ const arTime = document.querySelector(".arTime");
 const avTime = document.querySelector(".avTime");
 
 arTime.addEventListener("click", function () {
-  video.currentTime -= 10;
+  if (video.currentTime > 0) {
+    video.currentTime -= 10;
+  }
 });
 
 window.addEventListener("keydown", function (e) {
@@ -301,7 +308,9 @@ window.addEventListener("keydown", function (e) {
 });
 
 avTime.addEventListener("click", function () {
-  video.currentTime += 10;
+  if (video.currentTime > 0) {
+    video.currentTime += 10;
+  }
 });
 
 const viewTimeArea = document.querySelector(".viewTime");
@@ -367,7 +376,6 @@ playBack.forEach((event) => {
     removeClassActive();
     event.classList.add("actives");
     let speed = event.getAttribute("data-speed");
-    console.log(event.getAttribute("data-speed"));
     video.playbackRate = speed;
     list.style.display = "none";
     oreg.classList.remove("cache");
@@ -384,3 +392,17 @@ function removeClassActive() {
 // window.addEventListener("keydown", function (evt) {
 //   console.log(evt);
 // });
+const blockst = document.querySelector(".volumestock");
+const blockV = document.querySelector(".volume_block");
+
+mute.addEventListener("mousemove", function () {
+  blockst.classList.add("displayS");
+});
+
+onmute.addEventListener("mousemove", function () {
+  blockst.classList.add("displayS");
+});
+
+blockV.addEventListener("mouseleave", function () {
+  blockst.classList.remove("displayS");
+});
