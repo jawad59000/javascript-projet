@@ -9,40 +9,61 @@ body {
   align-items: center;
   height: 100vh;
   background-color: black;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.avTime {
+  cursor: pointer;
+}
+
+.arTime {
+  cursor: pointer;
 }
 
 h1 {
   position: absolute;
-  top: 30px;
+  top: 10px;
   color: white;
 }
 .video {
   width: 600px;
   height: 350px;
   position: relative;
+  background-color: black;
 }
 .video video {
-  height: auto;
+  height: 100%;
   width: 100%;
 }
 
 .loader {
   display: flex;
   justify-content: space-between;
-  height: 30px;
+  height: 35px;
   background-color: blueviolet;
   position: absolute;
   box-shadow: rgba(0, 0, 0, 0.5) 0 2px 2px;
-  border-radius: 15px;
-  bottom: 15px;
-  left: 2.5%;
-  width: 95%;
+  /* border-radius: 15px; */
+  width: 100%;
   padding-left: 14px;
-  padding-top: 6px;
+  padding-top: 13px;
   padding-right: 14px;
   box-sizing: border-box;
+  z-index: 100;
+  position: absolute;
+  bottom: 0;
 }
 
+.separation {
+  font-size: 18px;
+  font-weight: 900;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+.durationTime {
+  display: flex;
+}
 .pause {
   display: none;
 }
@@ -73,37 +94,91 @@ h1 {
   background-color: rgba(255, 255, 255, 0.5);
   height: 7px;
   box-shadow: rgba(0, 0, 0, 0.5) 0 0 2px inset;
-  width: 55%;
-  border-radius: 4px;
+  width: 100%;
   margin-top: 4px;
   cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: -4px;
+}
+
+.viewTime {
+  position: absolute;
+  padding: 10px 5px;
+  color: white;
+  background-color: black;
+  /* min-width: 50px; */
+  font-size: 14px;
+  border-radius: 5px;
+  z-index: 1;
+  bottom: 46px;
+  left: var(--x);
+  transform: translateX(-50%);
+}
+
+.viewTime::before {
+  content: "";
+  position: absolute;
+  bottom: -38%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: black;
+  width: 15px;
+  height: 15px;
+  z-index: -1;
 }
 
 .progress_bar {
   background-color: #fff;
-  border-radius: 4px;
   height: 100%;
   cursor: pointer;
   width: 0px;
+  position: relative;
 }
 
+.progress_bar::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  right: -5px;
+  top: 0;
+  transform: translateY(-20%);
+  background-color: #fff;
+  /* z-index: -1; */
+}
+
+.block1 {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
 .volume_block {
   display: flex;
-  width: 15%;
 }
 .volume {
   cursor: pointer;
   padding-right: 5px;
 }
 
+.volumestock {
+  display: none;
+}
+
 .volume_bar {
+  /* display: none; */
+  animation: fade-in 0.5s linear;
+  transition: animation 0.5s linear;
   background-color: rgba(255, 255, 255, 0.5);
   height: 7px;
   box-shadow: rgba(0, 0, 0, 0.5) 0 0 2px inset;
   border-radius: 4px;
   margin-top: 4px;
-  width: 80%;
+  width: 73px;
   cursor: pointer;
+  /* display: none; */
+  /* transform: rotate(-90deg); */
 }
 
 .progress_volume {
@@ -112,8 +187,20 @@ h1 {
   height: 100%;
   width: 100%;
   cursor: pointer;
+  position: relative;
 }
 
+.progress_volume::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  right: -5px;
+  top: 0;
+  transform: translateY(-20%);
+  background-color: #fff;
+}
 .home {
   position: absolute;
   left: 5px;
@@ -127,9 +214,66 @@ h1 {
 .display {
   display: block;
 }
+.fantome {
+  animation: fantome 1s forwards;
+  transition: animation 1s linear;
+}
+
+.displayS {
+  display: block;
+  animation: fade-in 0.5s linear;
+  transition: animation 0.5s linear;
+}
+
+@keyframes fantome {
+  100% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  25% {
+    opacity: 0.75;
+  }
+  0% {
+    opacity: 1;
+    display: none;
+  }
+}
+@keyframes fade-in {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+    width: 20px;
+  }
+
+  50% {
+    opacity: 0.5;
+    width: 40px;
+  }
+
+  75% {
+    opacity: 0.75;
+    width: 65px;
+  }
+  100% {
+    width: 73px;
+    opacity: 1;
+  }
+}
 
 .cache {
   display: none;
+  /* animation: fantome 3s linear;
+  transition: animation 3s linear; */
 }
 
 .pleinEcran {
@@ -137,4 +281,209 @@ h1 {
   top: 0;
   width: 1263px;
   height: 590px;
+}
+
+.speed {
+  cursor: pointer;
+}
+
+.repeat {
+  display: flex;
+  justify-content: space-between;
+  /* width: 40px; */
+  cursor: pointer;
+}
+
+.active {
+  color: white;
+  display: block;
+}
+
+.list {
+  background-color: black;
+  position: absolute;
+  top: -215px;
+  padding: 10px;
+  right: -30px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+}
+li {
+  list-style-type: none;
+  border-radius: 5px;
+  width: 99%;
+}
+
+.list h3 {
+  padding-bottom: 10px;
+}
+li:hover {
+  background-color: #fff;
+  color: black;
+  cursor: pointer;
+}
+.normal {
+  padding-right: 2px;
+  padding-left: 2px;
+}
+
+.btnRg {
+  display: flex;
+  background-color: transparent;
+  position: relative;
+}
+
+.actives {
+  background-color: white;
+  color: black;
+}
+.blockFin {
+  display: flex;
+  justify-content: space-between;
+  width: 170px;
+}
+.contour {
+  position: absolute;
+  position: absolute;
+  content: "";
+  width: 600px;
+  height: 350px;
+  border: 20px solid white;
+  z-index: 30;
+  border-radius: 20px;
+}
+
+.logo1 {
+  position: absolute;
+  width: 150px;
+  height: 90px;
+  top: 190px;
+  left: 20px;
+  transition: all 4s ease-in-out;
+  animation: luffy2 infinite 4s;
+}
+.logo2 {
+  position: absolute;
+  width: 150px;
+  height: 90px;
+  top: 190px;
+  right: 20px;
+  transition: all 4s ease-in-out;
+  animation: luffy infinite 4s;
+}
+
+@keyframes luffy {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes luffy2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .video {
+    width: 400px;
+    height: 280px;
+  }
+  .contour {
+    width: 400px;
+    height: 280px;
+    /* border: none; */
+    top: 27%;
+  }
+  h1 {
+    position: absolute;
+    top: 40px;
+  }
+  .block1 {
+    width: 180px;
+  }
+  .blockFin {
+    width: 170px;
+  }
+  .logo1 {
+    position: absolute;
+    width: 150px;
+    height: 90px;
+    top: 190px;
+    left: 55px;
+    transition: all 4s ease-in-out;
+    animation: luffy2 infinite 4s;
+  }
+  .logo2 {
+    position: absolute;
+    width: 150px;
+    height: 90px;
+    top: 190px;
+    right: 55px;
+    transition: all 4s ease-in-out;
+    animation: luffy infinite 4s;
+  }
+}
+
+@media (max-width: 390px) {
+  .video {
+    width: 390px;
+    height: 360px;
+    /* display: ; */
+  }
+  .contour {
+    left: 0px;
+    width: 190px;
+    height: 220px;
+    border: none;
+    top: 160px;
+    /* top: 25%; */
+  }
+  h1 {
+    position: absolute;
+    top: 40px;
+    font-size: 20px;
+  }
+  .block1 {
+    width: 180px;
+  }
+  .blockFin {
+    width: 160px;
+  }
+
+  .volume_bar {
+    display: block;
+  }
+  .logo1 {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    top: 100px;
+    left: 145px;
+    transition: all 4s ease-in-out;
+    animation: luffy2 infinite 4s;
+  }
+  .logo2 {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    top: 600px;
+    right: 145px;
+    transition: all 4s ease-in-out;
+    animation: luffy infinite 4s;
+  }
 }

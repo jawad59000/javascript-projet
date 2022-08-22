@@ -19,7 +19,6 @@ body {
 }
 
 #letterAlreadyUsed {
-  top: 50px;
   font-size: 30px;
   position: absolute;
   top: 60px;
@@ -32,6 +31,8 @@ body {
 }
 
 #emptyLetters {
+  align-items: center;
+  text-align: center;
   position: absolute;
   font-size: 60px;
   bottom: 70px;
@@ -61,4 +62,17 @@ body {
   background-color: white;
   cursor: pointer;
   z-index: 10;
+}
+
+@media (max-width: 390px) {
+  #emptyLetters {
+    font-size: 40px;
+  }
+  #letterAlreadyUsed {
+    text-align: center;
+    top: 80px;
+  }
+  #turn {
+    top: 40px;
+  }
 }

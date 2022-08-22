@@ -33,9 +33,10 @@ body {
 
 .principal {
   font-size: 40px;
+  height: auto;
+  max-width: 700px;
   font-weight: bold;
   text-align: center;
-  border: 3px solid black;
   border-radius: 20px;
   padding: 5px;
   margin-top: 10px;
@@ -45,7 +46,8 @@ body {
 }
 
 p {
-  margin-top: 230px;
+  position: absolute;
+  bottom: 60px;
   background-color: rgb(0, 0, 0, 0.7);
   color: rgb(172, 150, 24);
   font-size: 30px;
@@ -65,7 +67,7 @@ p:hover {
   color: rgb(0, 0, 0, 0.7);
   font-size: 250px;
   position: absolute;
-  top: 80px;
+  top: 100px;
   right: 120px;
   transform: rotate(42deg);
 }

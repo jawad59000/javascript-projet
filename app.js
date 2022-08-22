@@ -87,12 +87,12 @@ ouvert.addEventListener("click", function () {
     )
     .staggerFrom(
       projet,
-      2,
+      0.5,
       {
         transform: "translateY(1900px)",
         ease: "power2.out",
       },
-      0.3,
+      0.2,
       "-=1"
     );
   TL.play();

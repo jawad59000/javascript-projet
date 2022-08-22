@@ -126,24 +126,16 @@ button {
   cursor: pointer;
 }
 
-@media screen and (max-width: 570px) {
-  .nav {
-    width: 100%;
-  }
-
+@media screen and (max-width: 390px) {
   .ouvrir {
-    opacity: 0;
+    top: 770px;
+    right: 20px;
   }
-  .fermer {
-    color: rgba(255, 0, 0, 0.564);
-    position: absolute;
-    font-size: 35px;
-    font-weight: bold;
-    top: 15px;
-    left: 460px;
-    cursor: pointer;
-    /* background-color: black; */
-    z-index: 3;
-    transition: 0.3s linear;
+}
+
+@media screen and (max-width: 560px) {
+  .ouvrir {
+    right: 20px;
+    top: 20px;
   }
 }

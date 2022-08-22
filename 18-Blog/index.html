@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lodash</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="tab.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <form action="" method="get" class="form-example">
+      <div class="form-example">
+        <h1 class="formTitle">Create your article</h1>
+        <label for="title">Title: </label>
+        <br />
+        <input type="text" name="title" id="title" required />
+      </div>
+      <div class="form">
+        <label for="picture">Add a picture: </label>
+        <br />
+        <input type="text" name="picture" id="picture" required />
+        <br />
+        <label for="description">Add a description: </label>
+        <br />
+        <textarea
+          name="description"
+          id="description"
+          cols="30"
+          rows="10"
+        ></textarea>
+      </div>
+      <div class="form-example">
+        <input type="submit" value="Create!" class="submit" />
+      </div>
+    </form>
+
+    <div class="divArticle"></div>
+    <article>
+      <h1 class="title">fefe</h1>
+      <img src="./photo/compact.png" alt="" />
+      <p class="description">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis
+        cumque, corrupti dolor quod, aut temporibus necessitatibus id explicabo
+        esse natus atque voluptatem magni neque repudiandae ipsa exercitationem.
+        Officiis, velit quasi?
+      </p>
+    </article>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  </body>
+</html>

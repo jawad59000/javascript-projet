@@ -27,8 +27,6 @@ const words = [
 const word = random();
 
 const wordLetters = word.word.toUpperCase().split("");
-
-console.log(word.link);
 const emptyLetters = new Array(word.word.length);
 let turn = 8;
 const letterAlreadyUsed = [];
@@ -81,6 +79,12 @@ déjà utiliser : ${letterAlreadyUsed.join(", ")}`;
   guestWordRender(emptyLetters);
 }
 
+window.addEventListener("keydown", function (e) {
+  if (e.keyCode === 13) {
+    selectedLetter();
+  }
+});
+
 function selectedLetter() {
   let letter = document.getElementById("selectedLetter").value;
   letter = letter.trim();
@@ -104,21 +108,22 @@ function selectedLetter() {
   render();
   // console.log(wordLetters);
   if (turn === 0) {
-    reset();
     alert("DOMMAGE VOUS AVEZ PERDU, ESSAYER ENCORE!");
     etape = 0;
     document.querySelector("#emptyLetters").innerHTML = `Le mot était :
       <a target = _blank href=${word.link}>${word.word}</a>`;
     img[8].classList.add("active");
+    reset();
+    reload(true);
   }
   if (wordLetters.every((el) => el === "")) {
-    reset();
     alert("FORMIDABLE VOUS AVEZ GAGNER!");
     etape = 0;
     document.querySelector(
       "#emptyLetters"
     ).innerHTML = `Bien jouer c'était bien le mot :
-      <a target = _blank href=${word.link}>${word.word}</a>`;
+      <a target = _blank href=${word.link}>${word.word.toUpperCase()}</a>`;
+    reset();
   }
 }
 
