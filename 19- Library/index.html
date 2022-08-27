@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"></script> -->
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <input
+      class="home"
+      type="button"
+      value="Retour!"
+      onclick="history.back()"
+    />
+    <button class="darkMode">Mode</button>
+    <h1 class="principal">Library</h1>
+    <button class="newBook">Nouveau Livre</button>
+    <form>
+      <i class="fa-solid fa-xmark fermer"></i>
+      <h1>Nouveau livre</h1>
+      <p class="recommandation">
+        Veuillez Entrer l'adresse d'une image d'internet en portrait au format
+        jpg
+      </p>
+      <label for="image">Image</label>
+      <input type="text" id="image" />
+
+      <label for="title">Titre</label>
+      <input type="text" name="title" id="title" />
+
+      <label for="author">Auteur</label>
+      <input type="text" name="author" id="author" />
+
+      <label for="nbrPages">Nombres De Pages</label>
+      <input type="number" name="nbrPages" id="nbrPages" />
+
+      <div class="lu">
+        <label for="read"> Deja lu</label>
+        <input type="checkbox" name="read" id="read" />
+      </div>
+
+      <input type="submit" value="submit" id="submit" />
+    </form>
+    <div class="search">
+      <h2>Search a book on your library</h2>
+      <input type="text" placeholder="ex: Harry Potter" class="searchBook" />
+    </div>
+    <section class="library">
+      <!-- <div class="book">
+        <div class="info">
+          <h1>Harry Potter</h1>
+          <h2>Tom Jedusor</h2>
+          <div class="count">
+            <h5>559 pages</h5h5>
+            <h5>il n'a pas encore etait lu</h5>
+          </div>
+        </div>
+        <div class="btn">
+          <button class="delete">delete</button>
+          <button class="read">read</button>
+        </div>
+      </div> -->
+      <!-- <div class="book"></div> -->
+    </section>
+  </body>
+</html>

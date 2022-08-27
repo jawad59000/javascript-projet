@@ -275,26 +275,29 @@ const info = [
   },
 ];
 
-const li = [
-  { link: "#chunk", value: "_.chunk", type: "Array" },
-  { link: "#compact", value: "_.compact", type: "Array" },
-  { link: "#concat", value: "_.concat", type: "Array" },
-  { link: "#difference", value: "_.difference", type: "Array" },
-  { link: "#differenceBy", value: "_.differenceBy", type: "Array" },
-  { link: "#differenceWith", value: "_.differenceWith", type: "Array" },
-  { link: "#drop", value: "_.drop", type: "Array" },
-  { link: "#dropRight", value: "_.dropRight", type: "Array" },
-  { link: "#dropRightWhile", value: "_.dropRightWhile", type: "Array" },
-  { link: "#dropWhile", value: "_.dropWhile", type: "Array" },
-  { link: "#fill", value: "_.fill", type: "array" },
-  { link: "#findIndex", value: "_.findIndex", type: "Array" },
-  { link: "#findLastIndex", value: "_.findLastIndex", type: "Array" },
-  { link: "#flatten", value: "_.flatten", type: "Array" },
-  { link: "#flattenDeep", value: "_.flattenDeep", type: "Array" },
-  { link: "#flattenDepth", value: "_.flattenDepth", type: "Array" },
-  { link: "#fromPairs", value: "_.fromPairs", type: "Array" },
-  { link: "#head", value: "_.head", type: "zigoto" },
-  { link: "#indexOf", value: "_.indexOf", type: "Collections" },
+const menu = [
+  {
+    category: "array",
+    links: [
+      { link: "#chunk", value: "_.chunk" },
+      { link: "#compact", value: "_.compact" },
+      { link: "#concat", value: "_.concat" },
+      { link: "#difference", value: "_.difference" },
+      { link: "#differenceBy", value: "_.differenceBy" },
+      { link: "#differenceWith", value: "_.differenceWith" },
+      { link: "#drop", value: "_.drop" },
+      { link: "#dropRight", value: "_.dropRight" },
+      { link: "#dropRightWhile", value: "_.dropRightWhile" },
+      { link: "#dropWhile", value: "_.dropWhile" },
+      { link: "#fill", value: "_.fill" },
+      { link: "#findIndex", value: "_.findIndex" },
+      { link: "#findLastIndex", value: "_.findLastIndex" },
+      { link: "#flatten", value: "_.flatten" },
+      { link: "#flattenDeep", value: "_.flattenDeep" },
+      { link: "#flattenDepth", value: "_.flattenDepth" },
+      { link: "#fromPairs", value: "_.fromPairs" },
+    ],
+  },
 ];
 
 // const collections = [

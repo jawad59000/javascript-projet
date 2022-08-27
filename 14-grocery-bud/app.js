@@ -111,6 +111,7 @@ function editItem(e) {
   editID = element.dataset.id;
   //on met le text du button en edit
   submitBtn.textContent = "edit";
+  grocery.focus();
 }
 // set back to defaults
 function setBackToDefault() {
@@ -151,7 +152,6 @@ function removeFromLocalStorage(id) {
       return item;
     }
   });
-
   localStorage.setItem("list", JSON.stringify(items));
 }
 
@@ -171,6 +171,18 @@ function editLocalStorage(id, value) {
 // SETUP LOCALSTORAGE.REMOVEITEM('LIST');
 
 // ****** setup items **********
+
+function setupItems() {
+  let items = getLocalStorage();
+
+  if (items.length > 0) {
+    // crée la list d'element puis l'afficher grace  a la classe show container
+    items.forEach(function (item) {
+      createListItem(item.id, item.value);
+    });
+    container.classList.add("show-container");
+  }
+}
 
 function createListItem(id, value) {
   //  crée un element article
@@ -205,16 +217,4 @@ function createListItem(id, value) {
   // append child
   // on ajoute l'element a la fin de la list des article
   list.appendChild(element);
-}
-
-function setupItems() {
-  let items = getLocalStorage();
-
-  if (items.length > 0) {
-    // crée la list d'element puis l'afficher grace  a la classe show container
-    items.forEach(function (item) {
-      createListItem(item.id, item.value);
-    });
-    container.classList.add("show-container");
-  }
 }
