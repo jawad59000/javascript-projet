@@ -37,9 +37,9 @@ class Library {
       let lu = "";
 
       if (book.read) {
-        lu = "le livre a deja été lu";
+        lu = "Déja lu";
       } else {
-        lu = `le livre n'a pas été lu`;
+        lu = `Pas lu`;
       }
 
       return `<div class="book"><div class="info">
@@ -109,9 +109,9 @@ class Library {
     if (array.length > 0) {
       let lu = "";
       if (read) {
-        lu = "le livre a deja été lu";
+        lu = "Déja lu";
       } else {
-        lu = `le livre n'a pas été lu`;
+        lu = `Pas lu`;
       }
 
       const filter = array.map((character) => {
@@ -292,12 +292,14 @@ window.addEventListener("load", setupItems);
 window.addEventListener("load", function () {
   let element = document.querySelector("section");
   element = element.lastChild;
-  id = element.children
-    .item(0)
-    .children.item(0)
-    .nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.children.item(
-      0
-    ).dataset.id;
+  if (element.children > 0) {
+    id = element.children
+      .item(0)
+      .children.item(0)
+      .nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.children.item(
+        0
+      ).dataset.id;
+  }
 });
 
 const mode = document.querySelector(".darkMode");
@@ -369,3 +371,20 @@ if (!library.myLibrary.length) {
     "section"
   ).innerHTML = `<h1>Il n'y a aucun livre dans la library clicker sur le bouton nouveau livre pour en ajouter un</h1>`;
 }
+
+function clearItems() {
+  const items = document.querySelectorAll(".book");
+  if (items.length > 0) {
+    // s'il ya plus de 0 article alors on va supprimer tous les enfans de la list
+    items.forEach(function (item) {
+      document.querySelector("section").removeChild(item);
+    });
+  }
+  // sinon on va retirer la class show-container au container pour qu'on ne voit plus le button clear items
+  setBackToDefault();
+  localStorage.removeItem("blog");
+}
+
+const deleteAllBook = document.querySelector(".clearLibrary");
+
+deleteAllBook.addEventListener("click", clearItems);
