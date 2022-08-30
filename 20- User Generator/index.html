@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./app.js" defer></script>
+  </head>
+  <body>
+    <input
+      class="home"
+      type="button"
+      value="Retour!"
+      onclick="history.back()"
+    />
+    <div class="carte">
+      <div class="image">
+        <img src="" />
+      </div>
+
+      <div class="info"></div>
+
+      <div class="btnCat">
+        <i class="fa-solid fa-user btn name active" data-id="fullName"></i>
+        <i class="fa-solid fa-envelope btn" data-id="email"></i>
+        <i class="fa-solid fa-calendar btn" data-id="age"></i>
+        <i class="fa-solid fa-map btn" data-id="adress"></i>
+        <i class="fa-solid fa-phone btn" data-id="number"></i>
+        <i class="fa-solid fa-user-lock btn" data-id="passWord"></i>
+      </div>
+      <button class="btnChange">Change User</button>
+    </div>
+  </body>
+</html>

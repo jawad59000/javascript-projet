@@ -180,9 +180,6 @@ const newBook = document.querySelector(".newBook");
 const form = document.querySelector("form");
 newBook.addEventListener("click", function () {
   form.classList.add("display");
-  if (library.myLibrary.length < 1) {
-    document.querySelector("section").textContent = ``;
-  }
 });
 
 let title = document.getElementById("title");
@@ -208,6 +205,8 @@ submit.addEventListener("click", function (e) {
     alert("Entrer un vrai titre de livre");
   } else if (regExp2.test(author.value) === false) {
     alert("Entrer un vrai nom d'auteur");
+  } else if (nbrPages.value < 1) {
+    alert("Entrer un nombre de pages supérieur a 0");
   } else {
     const book = new Book(
       title.value,
@@ -364,8 +363,6 @@ search.addEventListener("keyup", function () {
     ).innerHTML = `<h1>Il n'y a aucun livre dans la library clicker sur le bouton nouveau livre pour en ajouter un</h1>`;
   }
 });
-
-const div = document.querySelector(".search");
 if (!library.myLibrary.length) {
   document.querySelector(
     "section"
@@ -375,16 +372,35 @@ if (!library.myLibrary.length) {
 function clearItems() {
   const items = document.querySelectorAll(".book");
   if (items.length > 0) {
-    // s'il ya plus de 0 article alors on va supprimer tous les enfans de la list
     items.forEach(function (item) {
       document.querySelector("section").removeChild(item);
     });
   }
-  // sinon on va retirer la class show-container au container pour qu'on ne voit plus le button clear items
   setBackToDefault();
   localStorage.removeItem("blog");
 }
 
 const deleteAllBook = document.querySelector(".clearLibrary");
 
-deleteAllBook.addEventListener("click", clearItems);
+deleteAllBook.addEventListener("click", function () {
+  if (library.myLibrary.length) {
+    clearItems();
+    setTimeout(() => {
+      document.querySelector(
+        "section"
+      ).innerHTML = `<h1>Il n'y a aucun livre dans la library clicker sur le bouton nouveau livre pour en ajouter un</h1>`;
+    }, 4000);
+    document.querySelector(
+      "section"
+    ).innerHTML = `<h2> la Library a été vider </h2>`;
+  } else {
+    setTimeout(() => {
+      document.querySelector(
+        "section"
+      ).innerHTML = `<h1>Il n'y a aucun livre dans la library clicker sur le bouton nouveau livre pour en ajouter un</h1>`;
+    }, 4000);
+    document.querySelector(
+      "section"
+    ).innerHTML = `<h2> la Library est déja vide </h2>`;
+  }
+});

@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.home {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  color: var(--clr-bcg);
+  background-color: var(--clr-font);
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  width: 80px;
+}
+
+p {
+  font-size: 30px;
+  margin-bottom: 19px;
+}
+
+.carte {
+  height: 360px;
+  width: 500px;
+  background-color: hsl(0, 4%, 90%);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px hsl(213, 78%, 65%) solid;
+  box-shadow: hsl(213, 78%, 65%, 0.6) 0px 10px 20px,
+    hsl(213, 78%, 65%, 0.6) 0px 6px 6px;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  border: 3px hsl(213, 78%, 65%) solid;
+}
+
+img:hover {
+  transform: scale(1.6) translateY(30px);
+}
+
+.active {
+  color: hsl(213, 78%, 65%);
+  animation: gros 0.3s;
+  transition: ease-in-out 0.3s;
+}
+
+@keyframes gros {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.6);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.image {
+  width: 30%;
+}
+
+.btnCat {
+  width: 80%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.btn {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.btnChange {
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  background-color: hsl(213, 78%, 65%);
+  font-weight: bold;
+  cursor: pointer;
+}
