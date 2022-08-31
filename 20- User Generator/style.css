@@ -1,3 +1,13 @@
+:root {
+  --clr-bg: hsl(213, 78%, 65%, 0.4);
+  --clr-bcg: hsl(213, 78%, 65%);
+}
+/* 
+.dark-theme {
+  --clr-colorBook: rgb(121, 68, 185);
+
+} */
+
 * {
   margin: 0;
   padding: 0;
@@ -26,20 +36,21 @@ body {
 
 p {
   font-size: 30px;
-  margin-bottom: 19px;
+  margin-bottom: 10px;
 }
 
 .carte {
-  height: 360px;
-  width: 500px;
+  width: 550px;
+  min-height: 380px;
   background-color: hsl(0, 4%, 90%);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 3px hsl(213, 78%, 65%) solid;
-  box-shadow: hsl(213, 78%, 65%, 0.6) 0px 10px 20px,
-    hsl(213, 78%, 65%, 0.6) 0px 6px 6px;
+  border: 3px var(--clr-bcg) solid;
+}
+.jjj {
+  box-shadow: var(--clr-bg) 0px 10px 20px, var(--clr-bg) 0px 6px 6px;
 }
 
 img {
@@ -49,15 +60,30 @@ img {
   margin-top: 10px;
   margin-bottom: 20px;
   border-radius: 50%;
-  border: 3px hsl(213, 78%, 65%) solid;
+  border: 3px var(--clr-bcg) solid;
+  /* box-shadow: var(--clr-bg) 0px 10px 20px, var(--clr-bg) 0px 6px 6px; */
+  /* transition: 1s ease-in-out; */
 }
 
 img:hover {
-  transform: scale(1.6) translateY(30px);
+  animation: slide 3s;
+}
+@keyframes slide {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.6) translateY(30px);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .active {
-  color: hsl(213, 78%, 65%);
+  color: var(--clr-bcg);
   animation: gros 0.3s;
   transition: ease-in-out 0.3s;
 }
@@ -86,7 +112,6 @@ img:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
 }
 
 .btn {
@@ -97,8 +122,25 @@ img:hover {
 .btnChange {
   border-radius: 10px;
   border: none;
-  padding: 10px;
-  background-color: hsl(213, 78%, 65%);
-  font-weight: bold;
+  background-color: var(--clr-bcg);
+  font-size: 20px;
+  font-family: fantasy;
   cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  padding: 7px;
+  /* box-shadow: var(--clr-bg) 0px 6px 6px, var(--clr-bg) 0px 6px 6px; */
+}
+.btnChangeColor {
+  position: absolute;
+  /* left: 0; */
+  top: 30px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--clr-bcg);
+  font-size: 20px;
+  font-family: fantasy;
+  cursor: pointer;
+  padding: 7px;
 }
