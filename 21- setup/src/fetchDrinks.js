@@ -1,8 +1,10 @@
-import { showLoading } from "./toggleLoading.js";
+import { showLoading, hideLoading } from "./toggleLoading.js";
 
 async function fetchDrinks(url) {
   showLoading();
+
   try {
+    console.log(url);
     const response = await fetch(url);
     const data = await response.json();
 

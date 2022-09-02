@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagination Starter</title>
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <input
+      class="home"
+      type="button"
+      value="Retour!"
+      onclick="history.back()"
+    />
+    <header>
+      <h1>GitHub Users</h1>
+      <input type="text" placeholder="search an user" class="search" />
+    </header>
+    <main>
+      <div class="container">
+        <div class="card">
+          <img
+            src="https://cdn.pixabay.com/photo/2018/08/28/12/41/avatar-3637425_960_720.png"
+          />
+          <h4>jerome</h4>
+          <button class="btn">Profil</button>
+        </div>
+        <div class="card">
+          <img
+            src="https://cdn.pixabay.com/photo/2018/08/28/12/41/avatar-3637425_960_720.png"
+          />
+          <h4>jerome</h4>
+          <a
+            href="https://cdn.pixabay.com/photo/2018/08/28/12/41/avatar-3637425_960_720.png"
+            ><button class="btn">Profil</button></a
+          >
+        </div>
+      </div>
+      <div class="btn-container">
+        <button class="page-btn">1</button>
+        <button class="page-btn">1</button>
+        <button class="page-btn">1</button>
+        <button class="page-btn">1</button>
+        <button class="page-btn">1</button>
+        <button class="page-btn">1</button>
+      </div>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

@@ -11,6 +11,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: hsl(237, 100%, 96%);
+  position: relative;
 }
 
 .home {
@@ -43,6 +44,10 @@ body {
   font-family: fantasy;
   letter-spacing: 1px;
   width: 400px;
+}
+
+.recherche:focus {
+  outline: none;
 }
 
 section {
@@ -109,6 +114,7 @@ img:hover {
 .soloDrink {
   padding-top: 80px;
   width: 90%;
+  /* padding-left: 200px; */
   display: flex;
   /* background-color: grey; */
   justify-content: center;
@@ -172,6 +178,7 @@ img:hover {
 @media (max-width: 700px) {
   .soloDrink {
     display: block;
+    /* padding-left: 0; */
   }
   .soloDrink img {
     width: 100%;
@@ -186,10 +193,21 @@ img:hover {
 }
 
 .gif {
-  width: 90px;
-  visibility: hidden;
+  /* width: 10rem; */
+  min-height: 160px;
+  width: 160px;
+  position: absolute;
+  top: 190px;
+  z-index: 100;
+  display: none;
+}
+
+.img {
+  display: block;
+  width: 100%;
+  max-width: 10rem;
 }
 
 .hide-loading {
-  visibility: visible;
+  display: block;
 }
