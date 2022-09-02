@@ -316,7 +316,8 @@ Pagination
   color: hsl(240, 82%, 70%);
 }
 
-.info span {
+.info span,
+a {
   font-weight: bold;
   color: black;
 }
