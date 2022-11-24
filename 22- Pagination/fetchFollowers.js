@@ -1,4 +1,7 @@
+import { showLoading } from "./Loading.js";
+
 const fetchFollowers = async (url) => {
+  // showLoading();
   try {
     const response = await fetch(url);
     const data = await response.json();

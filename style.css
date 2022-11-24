@@ -8,7 +8,13 @@
 body {
   height: 100vh;
   max-width: 100vw;
-  background-image: url("./yamamoto.jpg");
+  background: linear-gradient(
+      to right,
+      rgba(131, 143, 38, 0.5),
+      rgba(255, 251, 144, 0.8)
+    ),
+    url("./yamamoto.jpg");
+  /* background: ; */
   background-size: cover;
   background-attachment: fixed;
   overflow-y: hidden;

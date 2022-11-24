@@ -11,7 +11,7 @@ export default async function displayDrink(user) {
               <h3>My id : <span>${id}</span> </h3>
               <h3>My pseudo is :  <span>${login}</span> </h3>
               <h3>My address : <span>Sorry i don't have an address to</span> </h3>
-              <h3>Link to my GitHub : <span><a href="${link}">Clique pour voir mont GitHub</a></span> </h3>
+              <h3>Link to my GitHub : <span><a href="${link}">Clique pour voir mon GitHub</a></span> </h3>
 
                 <a hreF="./index.html"><button>ALL Users</button></a>
               </div>
@@ -29,7 +29,7 @@ export default async function displayDrink(user) {
               <h3>My id : <span>${id}</span> </h3>
               <h3>My pseudo is :  <span>${login}</span> </h3>
               <h3>My address : <span>${location}</span> </h3>
-              <h3>Link to my GitHub : <span><a href="${link}">Clique pour voir mont GitHub</a></span> </h3>
+              <h3>Link to my GitHub : <span><a href="${link}">Clique pour voir mon GitHub</a></span> </h3>
 
                 <a hreF="./index.html"><button>ALL Users</button></a>
               </div>

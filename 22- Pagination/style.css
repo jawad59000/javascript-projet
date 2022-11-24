@@ -88,6 +88,9 @@ header {
   align-items: center;
 }
 
+header h1 {
+  color: var(--clr-primary-2);
+}
 input {
   width: 200px;
   height: 40px;
@@ -95,13 +98,14 @@ input {
   font-family: fantasy;
   padding: 8px;
   border-radius: 9px;
-  border: BLUE solid 2px;
+  border: var(--clr-primary-4) solid 2px;
 }
 input:focus {
   outline: none;
 }
 main {
   padding: 20px;
+  position: relative;
 }
 ul {
   list-style-type: none;
@@ -194,6 +198,12 @@ Pagination
   box-shadow: var(--light-shadow);
   padding: 2rem 3.5rem;
   text-align: center;
+  transition: ease-in 0.3s;
+}
+
+.card:hover {
+  background-color: var(--clr-primary-9);
+  color: var(--clr-black);
 }
 .card img {
   width: 130px;
@@ -237,7 +247,7 @@ Pagination
   margin: 0.5rem;
   transition: var(--transition);
 }
-.active-btn {
+.active {
   background: var(--clr-primary-1);
   color: var(--clr-white);
 }
@@ -341,10 +351,10 @@ a {
   }
 }
 
-.active {
+/* .active {
   background-color: green;
   color: white;
-}
+} */
 
 .msg {
   width: 95vw;
@@ -352,4 +362,21 @@ a {
   justify-content: center;
   padding-top: 40px;
   font-size: 30px;
+  border: #222 solid 3px;
+  background-color: #222;
+  height: 60px;
+}
+
+.gif {
+  /* width: 10rem; */
+  min-height: 160px;
+  width: 160px;
+  position: absolute;
+  left: 45%;
+  z-index: 20;
+  display: none;
+}
+
+.hide-loading {
+  display: block;
 }

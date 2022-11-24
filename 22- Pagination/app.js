@@ -4,11 +4,13 @@ import paginate from "./paginate.js";
 import displayButtons from "./displayButtons.js";
 import setUser from "./setUser.js";
 import searcher from "./search.js";
+import { showLoading } from "./Loading.js";
 const url = "https://api.github.com/users/john-smilga/followers?per_page=100";
 let index = 0;
 let page = [];
 const search = document.querySelector(".search");
 window.addEventListener("DOMContentLoaded", async function () {
+  showLoading();
   const followers = await fetchFollowers(url);
   page = paginate(followers);
 
@@ -16,7 +18,7 @@ window.addEventListener("DOMContentLoaded", async function () {
 
   displayButtons(page);
   setUser();
-  searcher();
+  searcher(followers);
   const btnContainer = document.querySelector(".btn-container");
   const prevBtn = this.document.querySelector(".prev-btn");
 

@@ -1,6 +1,17 @@
-const display = (followers) => {
-  // console.log(followers);
+import { hideLoading } from "./Loading.js";
+const container = document.querySelector(".container");
 
+const display = (followers) => {
+  // console.log(followers)
+
+  if (followers.length < 1) {
+    container.innerHTML = `<div class="msg">
+    <p>
+    Aucun utilisateur ne correspond a la recherche </p> </div>`;
+    console.log(container);
+  }
+
+  hideLoading();
   const showFollower = followers
     .map(function (follower) {
       // console.log(item);
